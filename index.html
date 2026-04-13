@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgar Flores García | Consultor TI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Fondo Slate-50 (Limpio), Acentos en Azul Cobalto (#2563eb), Texto en Slate-900. -->
+    <!-- Application Structure Plan: Diseño minimalista enfocado en la conversión. Se ha optimizado el botón de llamada para dispositivos móviles y se ha depurado el contenido eliminando secciones secundarias para un impacto visual más directo. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #0f172a;
+        }
+
+        .vcard-minimal {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 48px;
+            padding: 44px 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            text-align: center;
+        }
+
+        .photo-wrapper {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 32px;
+            border-radius: 50%;
+            padding: 4px;
+            background: #f1f5f9;
+            position: relative;
+        }
+
+        .photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-blue {
+            background-color: #2563eb;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .btn-blue:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: #f8fafc;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: #f1f5f9;
+            width: 100%;
+            margin: 32px 0;
+        }
+
+        .tag-blue {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vcard-minimal">
+        <!-- Foto de Perfil -->
+        <div class="photo-wrapper">
+            <div class="photo-inner">
+                <img id="imgView" src="" class="hidden w-full h-full object-cover">
+                <span id="imgIcon" class="text-4xl">&#128104;&#8205;&#128187;</span>
+            </div>
+            <!-- Subir Foto -->
+            <label for="inputImg" class="absolute bottom-1 right-1 bg-white shadow-md w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border border-slate-100 hover:bg-slate-50 transition">
+                <span class="text-blue-600 text-xl font-bold">&#43;</span>
+                <input type="file" id="inputImg" class="hidden" accept="image/*">
+            </label>
+        </div>
+
+        <!-- Info Principal -->
+        <div class="mb-10">
+            <div class="mb-3">
+                <span class="tag-blue">Ingeniero Senior TI</span>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Edgar Flores García</h1>
+            <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
+        </div>
+
+        <!-- Acciones Principales -->
+        <div class="space-y-3">
+            <button onclick="window.print()" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
+                <span class="text-xl">&#128196;</span> Ver Currículum Completo
+            </button>
+
+            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
+                <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
+            </a>
+
+            <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">
+                <span class="text-xl">&#128172;</span> WhatsApp Directo
+            </a>
+        </div>
+
+        <!-- Contacto Rápido -->
+        <div class="grid grid-cols-2 gap-3 mt-3">
+            <!-- El enlace tel: permite marcar directamente desde el móvil -->
+            <a href="tel:5644326915" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
+                <span>&#128222;</span> Llamar
+            </a>
+            <a href="mailto:edgar.flores290789@gmail.com" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
+                <span>&#9993;</span> Correo
+            </a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- TecnoSite Ecosystem -->
+        <div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Empresa & Soluciones</p>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
+                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#127760;</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase">Servicios TI</span>
+                </a>
+                <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
+                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#128722;</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase">Tienda Online</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest">
+            CDMX | 2026
+        </p>
+    </div>
+
+    <script>
+        // Lógica de previsualización de imagen
+        const inputImg = document.getElementById('inputImg');
+        const imgView = document.getElementById('imgView');
+        const imgIcon = document.getElementById('imgIcon');
+
+        inputImg.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    imgView.src = event.target.result;
+                    imgView.classList.remove('hidden');
+                    imgIcon.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
