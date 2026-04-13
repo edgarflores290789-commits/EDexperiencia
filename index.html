@@ -6,9 +6,7 @@
     <title>Edgar Flores García | Consultor TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Fondo Slate-50 (Limpio), Acentos en Azul Cobalto (#2563eb), Texto en Slate-900. -->
-    <!-- Application Structure Plan: Diseño minimalista enfocado en la conversión. Se ha optimizado el botón de llamada para dispositivos móviles y se ha depurado el contenido eliminando secciones secundarias para un impacto visual más directo. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- Paleta: Fondo Slate-50, Acentos en Azul Cobalto (#2563eb). Minimalismo Pro. -->
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -29,18 +27,19 @@
             border: 1px solid #f1f5f9;
             border-radius: 48px;
             padding: 44px 28px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
         .photo-wrapper {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto 32px;
             border-radius: 50%;
-            padding: 4px;
+            padding: 5px;
             background: #f1f5f9;
             position: relative;
+            border: 1px solid #e2e8f0;
         }
 
         .photo-inner {
@@ -101,20 +100,14 @@
 <body>
 
     <div class="vcard-minimal">
-        <!-- Foto de Perfil -->
+        <!-- Perfil con imagen permanente vinculada -->
         <div class="photo-wrapper">
             <div class="photo-inner">
-                <img id="imgView" src="" class="hidden w-full h-full object-cover">
-                <span id="imgIcon" class="text-4xl">&#128104;&#8205;&#128187;</span>
+                <img src="WhatsApp Image 2026-04-07 at 2.13.27 PM.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
             </div>
-            <!-- Subir Foto -->
-            <label for="inputImg" class="absolute bottom-1 right-1 bg-white shadow-md w-10 h-10 rounded-full flex items-center justify-center cursor-pointer border border-slate-100 hover:bg-slate-50 transition">
-                <span class="text-blue-600 text-xl font-bold">&#43;</span>
-                <input type="file" id="inputImg" class="hidden" accept="image/*">
-            </label>
         </div>
 
-        <!-- Info Principal -->
+        <!-- Identidad -->
         <div class="mb-10">
             <div class="mb-3">
                 <span class="tag-blue">Ingeniero Senior TI</span>
@@ -125,9 +118,10 @@
 
         <!-- Acciones Principales -->
         <div class="space-y-3">
-            <button onclick="window.print()" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
+            <!-- El enlace debe coincidir exactamente con el nombre del archivo en tu repositorio -->
+            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
                 <span class="text-xl">&#128196;</span> Ver Currículum Completo
-            </button>
+            </a>
 
             <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
                 <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
@@ -138,9 +132,8 @@
             </a>
         </div>
 
-        <!-- Contacto Rápido -->
+        <!-- Contacto Directo -->
         <div class="grid grid-cols-2 gap-3 mt-3">
-            <!-- El enlace tel: permite marcar directamente desde el móvil -->
             <a href="tel:5644326915" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
                 <span>&#128222;</span> Llamar
             </a>
@@ -151,46 +144,25 @@
 
         <div class="section-divider"></div>
 
-        <!-- TecnoSite Ecosystem -->
+        <!-- Portales de Negocio -->
         <div>
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Empresa & Soluciones</p>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Empresa & Soluciones</p>
             <div class="grid grid-cols-2 gap-4">
                 <a href="https://tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
                     <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#127760;</span>
-                    <span class="text-[9px] font-bold text-slate-600 uppercase">Servicios TI</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Servicios TI</span>
                 </a>
                 <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
                     <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#128722;</span>
-                    <span class="text-[9px] font-bold text-slate-600 uppercase">Tienda Online</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Tienda Online</span>
                 </a>
             </div>
         </div>
 
-        <!-- Footer -->
-        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest">
+        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest text-center">
             CDMX | 2026
         </p>
     </div>
-
-    <script>
-        // Lógica de previsualización de imagen
-        const inputImg = document.getElementById('inputImg');
-        const imgView = document.getElementById('imgView');
-        const imgIcon = document.getElementById('imgIcon');
-
-        inputImg.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    imgView.src = event.target.result;
-                    imgView.classList.remove('hidden');
-                    imgIcon.classList.add('hidden');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 
 </body>
 </html>
