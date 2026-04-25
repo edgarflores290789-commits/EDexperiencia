@@ -3,181 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Flores García | Consultor TI</title>
+    <title>CV | Edgar Flores García</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            color: #0f172a;
-        }
-
-        .vcard-minimal {
-            width: 100%;
-            max-width: 420px;
-            background: #ffffff;
-            border: 1px solid #f1f5f9;
-            border-radius: 48px;
-            padding: 44px 28px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-
-        .photo-wrapper {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 32px;
-            border-radius: 50%;
-            padding: 5px;
-            background: #f1f5f9;
-            position: relative;
-            border: 1px solid #e2e8f0;
-        }
-
-        .photo-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #e2e8f0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #ffffff;
-        }
-
-        .btn-blue {
-            background-color: #2563eb;
-            color: white;
-            transition: all 0.2s ease;
-        }
-
-        .btn-blue:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 1px solid #e2e8f0;
-            color: #475569;
-            background: #ffffff;
-            transition: all 0.2s ease;
-        }
-
-        .btn-outline:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-            background: #f8fafc;
-        }
-
-        .section-divider {
-            height: 1px;
-            background: #f1f5f9;
-            width: 100%;
-            margin: 32px 0;
-        }
-
-        .tag-blue {
-            background: #eff6ff;
-            color: #2563eb;
-            padding: 4px 12px;
-            border-radius: 99px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Contenedor del QR */
-        #qrcode img {
-            margin: 0 auto;
-            border: 8px solid white;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .cv-container { max-width: 800px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 50px rgba(0,0,0,0.03); }
     </style>
 </head>
-<body>
+<body class="py-10 px-4">
 
-    <div class="vcard-minimal">
-        <div class="photo-wrapper">
-            <div class="photo-inner">
-                <img src="fotoperfil.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
+    <div class="cv-container rounded-[48px] overflow-hidden">
+        <div class="bg-slate-900 p-8 md:p-12 text-white relative">
+            <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition mb-8 group">
+                <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
+                <span class="text-xs font-bold uppercase tracking-widest">Volver a la Tarjeta</span>
+            </a>
+            
+            <h1 class="text-4xl font-extrabold mb-2">Edgar Flores García</h1>
+            <p class="text-blue-400 font-bold uppercase tracking-widest text-sm">Ingeniero en Tecnologías de la Información</p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm text-slate-300">
+                <span>📍 Atizapán, EdoMex</span>
+                <span>📞 56 4432 6915</span>
+                <span>✉️ edgar.flores290789@gmail.com</span>
             </div>
         </div>
 
-        <div class="mb-6">
-            <div class="mb-3">
-                <span class="tag-blue">Ingeniero Senior TI</span>
-            </div>
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Edgar Flores García</h1>
-            <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
-        </div>
+        <div class="p-8 md:p-12 space-y-12">
+            <section>
+                <h2 class="text-xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Perfil Profesional
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Especialista en administración de plataformas MDM/UEM (Ivanti Neurons) y analista de ciberseguridad SOC N1. 
+                    Experto en el despliegue de políticas de seguridad para grandes infraestructuras bancarias y monitoreo preventivo de amenazas.
+                </p>
+            </section>
 
-        <div class="mb-8">
-            <div id="qrcode" class="flex justify-center"></div>
-            <p class="mt-3 text-[9px] font-bold text-slate-400 uppercase tracking-widest text-center">Escanea para compartir contacto</p>
-        </div>
+            <section>
+                <h2 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Experiencia Laboral
+                </h2>
+                
+                <div class="space-y-8">
+                    <div class="relative pl-6 border-l-2 border-slate-100">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+                        <span class="text-xs font-bold text-blue-600 uppercase">2026 - Presente</span>
+                        <h3 class="text-lg font-bold text-slate-900">Analista de Ciberseguridad SOC N1</h3>
+                        <p class="text-sm font-medium text-slate-500 mb-3">Telefónica Tech (CyberSOC)</p>
+                        <ul class="text-slate-600 text-sm space-y-2 list-disc ml-4">
+                            <li>Monitoreo de eventos de seguridad en firewalls Fortinet.</li>
+                            <li>Gestión de plataformas Trend Micro (Vision One, Apex Central).</li>
+                            <li>Análisis preventivo de incidentes y escalación de amenazas.</li>
+                        </ul>
+                    </div>
 
-        <div class="space-y-3">
-            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://edgarflores290789-commits.github.io/EDexperiencia/%0AEND:VCARD" 
-               download="Contacto_Edgar_Flores.vcf" 
-               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg">
-                <span class="text-xl">💾</span> Guardar en Contactos
-            </a>
+                    <div class="relative pl-6 border-l-2 border-slate-100">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-200 rounded-full border-4 border-white"></div>
+                        <span class="text-xs font-bold text-slate-400 uppercase">2024 - 2026</span>
+                        <h3 class="text-lg font-bold text-slate-900">Especialista MobileIron / Ivanti</h3>
+                        <p class="text-sm font-medium text-slate-500 mb-3">BBVA | Telefónica Tech</p>
+                        <ul class="text-slate-600 text-sm space-y-2 list-disc ml-4">
+                            <li>Administración de más de 52,000 dispositivos móviles a nivel nacional.</li>
+                            <li>Configuración de perfiles de seguridad, VPN y certificados SCEP.</li>
+                            <li>Soporte de nivel 3 para infraestructura MDM.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
-                <span class="text-xl">&#128196;</span> Ver Currículum Completo
-            </a>
+            <section>
+                <h2 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Skills Técnicos
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Seguridad</p>
+                        <p class="text-sm font-bold text-slate-700">Fortinet</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Gestión</p>
+                        <p class="text-sm font-bold text-slate-700">Ivanti UEM</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Cloud</p>
+                        <p class="text-sm font-bold text-slate-700">Google Cloud</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Método</p>
+                        <p class="text-sm font-bold text-slate-700">Scrum / Jira</p>
+                    </div>
+                </div>
+            </section>
 
-            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
-                <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
-            </a>
-
-            <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">
-                <span class="text-xl">&#128172;</span> WhatsApp Directo
-            </a>
-        </div>
-
-        <div class="section-divider"></div>
-
-        <div>
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Empresa & Soluciones</p>
-            <div class="grid grid-cols-2 gap-4">
-                <a href="https://tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
-                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#127760;</span>
-                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Servicios TI</span>
+            <div class="pt-8 text-center">
+                <a href="https://wa.me/525644326915" class="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition shadow-xl shadow-emerald-100">
+                    <span>💬</span> Contactar por WhatsApp
                 </a>
-                <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
-                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#128722;</span>
-                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Tienda Online</span>
-                </a>
             </div>
         </div>
 
-        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest text-center">
-            CDMX | 2026
-        </p>
+        <footer class="bg-slate-50 p-8 text-center">
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                Edgar Flores García | Consultoría Profesional TI 2026
+            </p>
+        </footer>
     </div>
 
-    <script>
-        // Generador de QR dinámico apuntando a tu URL de GitHub
-        new QRCode(document.getElementById("qrcode"), {
-            text: "https://edgarflores290789-commits.github.io/EDexperiencia/",
-            width: 150,
-            height: 150,
-            colorDark : "#0f172a",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
-    </script>
 </body>
 </html>
