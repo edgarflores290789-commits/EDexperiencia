@@ -1,114 +1,199 @@
+Aquí tienes el código completo y definitivo para tu archivo **`Curriculum.html`**. He integrado toda la información de tus documentos, eliminando las etiquetas de "cite" para que el diseño sea limpio y profesional, y asegurando que el botón de regreso funcione correctamente hacia tu tarjeta digital.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Edgar Flores García</title>
+    <title>CV Profesional - Edgar Flores García</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
-        .cv-container { max-width: 800px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 50px rgba(0,0,0,0.03); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; padding: 0 !important; font-size: 8pt; }
+            .cv-container { box-shadow: none !important; margin: 0 !important; border: none !important; display: flex !important; flex-direction: row !important; }
+            .sidebar { width: 28% !important; background: #0f172a !important; color: white !important; padding: 1.2rem !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .main-content { width: 72% !important; background: white !important; padding: 1.2rem 1.5rem !important; }
+            @page { margin: 0.4cm; size: letter; }
+            .experience-item { page-break-inside: avoid; margin-bottom: 0.8rem !important; }
+        }
+        .photo-circle { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #2563eb; background: #1e293b; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .section-title { border-bottom: 2px solid #e2e8f0; color: #0f172a; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; padding-bottom: 2px; }
+        .experience-item { position: relative; padding-left: 14px; border-left: 2px solid #f1f5f9; margin-bottom: 1rem; }
+        .experience-item::before { content: ''; position: absolute; left: -6px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: #2563eb; }
     </style>
 </head>
-<body class="py-10 px-4">
+<body class="p-0 lg:p-4">
 
-    <div class="cv-container rounded-[48px] overflow-hidden">
-        <div class="bg-slate-900 p-8 md:p-12 text-white relative">
-            <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition mb-8 group">
-                <span class="text-xl group-hover:-translate-x-1 transition-transform">←</span>
-                <span class="text-xs font-bold uppercase tracking-widest">Volver a la Tarjeta</span>
-            </a>
-            
-            <h1 class="text-4xl font-extrabold mb-2">Edgar Flores García</h1>
-            <p class="text-blue-400 font-bold uppercase tracking-widest text-sm">Ingeniero en Tecnologías de la Información</p>
-            <div class="mt-6 flex flex-wrap gap-4 text-sm text-slate-300">
-                <span>📍 Atizapán, EdoMex</span>
-                <span>📞 56 4432 6915</span>
-                <span>✉️ edgar.flores290789@gmail.com</span>
+    <div class="no-print fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="index.html" class="bg-white text-slate-900 p-3 px-6 rounded-full shadow-2xl border border-slate-200 hover:bg-slate-50 transition font-bold text-xs text-center">
+            ← VOLVER AL INICIO
+        </a>
+        <button onclick="window.print()" class="bg-slate-900 text-white p-3 px-6 rounded-full shadow-2xl hover:bg-blue-700 transition font-bold flex items-center gap-2">
+            <span>&#128424;</span> IMPRIMIR CV
+        </button>
+    </div>
+
+    <div class="cv-container max-w-5xl mx-auto flex flex-col md:flex-row bg-white shadow-2xl overflow-hidden rounded-none lg:rounded-xl">
+        
+        <aside class="sidebar w-full md:w-[28%] bg-slate-900 text-white p-5 flex flex-col">
+            <div class="flex flex-col items-center text-center mb-6">
+                <div class="photo-circle mb-3">
+                    <img src="fotoperfil.jpeg" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
+                </div>
+                <h1 class="text-lg font-black leading-tight uppercase">Edgar Flores García</h1>
+                <p class="text-blue-400 text-[8px] font-bold tracking-widest uppercase mt-1">Ingeniero TI</p>
             </div>
-        </div>
 
-        <div class="p-8 md:p-12 space-y-12">
+            <div class="space-y-5">
+                <section>
+                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Contacto</h2>
+                    <ul class="space-y-1.5 text-[9px]">
+                        <li>&#9993; edgar.flores290789@gmail.com</li>
+                        <li>&#128222; 56 44 32 69 15</li>
+                        <li class="text-slate-400">&#128205; Prolongación Emiliano Zapata SN, Col. Veintidos de Febrero</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Competencias Digitales</h2>
+                    <div class="text-[8.5px] space-y-2 text-slate-300">
+                        <p>• Jira, Microsoft Office, Google Apps, Remedy, ServiceNow, LogMeIn, AnyDesk, TeamViewer.</p>
+                        <p>• Cisco Webex, Zoom, Microsoft Teams.</p>
+                        <p>• Gestión de proyectos, mantenimiento de sistemas informáticos, resolución de problemas técnicos.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Formación</h2>
+                    <div class="text-[9px] space-y-3">
+                        <div>
+                            <p class="font-bold uppercase leading-tight">Ingeniería en TI</p>
+                            <p class="text-slate-400">Cédula 13996348 (2024)</p>
+                            <p class="text-slate-400 italic">UT Fidel Velázquez</p>
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase leading-tight">TSU en TIC</p>
+                            <p class="text-slate-400">Egresado 2012-2014</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Idiomas</h2>
+                    <div class="text-[9px]">
+                        <p>Español: Nativo</p>
+                        <p>Inglés: TOEIC B1 (Técnico)</p>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <main class="main-content w-full md:w-[72%] p-8 bg-white flex flex-col gap-4">
             <section>
-                <h2 class="text-xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-                    <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Perfil Profesional
-                </h2>
-                <p class="text-slate-600 leading-relaxed">
-                    Especialista en administración de plataformas MDM/UEM (Ivanti Neurons) y analista de ciberseguridad SOC N1. 
-                    Experto en el despliegue de políticas de seguridad para grandes infraestructuras bancarias y monitoreo preventivo de amenazas.
+                <h2 class="section-title">Perfil Profesional</h2>
+                <p class="text-[10px] text-slate-600 leading-relaxed text-justify">
+                    Ingeniero en Tecnologías de la Información con experiencia en administración de plataformas MDM/UEM (Ivanti Neurons) para el sector bancario, así como en monitoreo de ciberseguridad como analista SOC NI. Certificado por Google en Ciberseguridad, Ivanti como especialista en MDM, Fortinet, hacking ético y gerencia de proyectos. Enfoque práctico, orientado a procedimientos documentados y resolución de problemas técnicos.
                 </p>
             </section>
 
             <section>
-                <h2 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-                    <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Experiencia Laboral
-                </h2>
+                <h2 class="section-title">Experiencia Laboral</h2>
                 
-                <div class="space-y-8">
-                    <div class="relative pl-6 border-l-2 border-slate-100">
-                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
-                        <span class="text-xs font-bold text-blue-600 uppercase">2026 - Presente</span>
-                        <h3 class="text-lg font-bold text-slate-900">Analista de Ciberseguridad SOC N1</h3>
-                        <p class="text-sm font-medium text-slate-500 mb-3">Telefónica Tech (CyberSOC)</p>
-                        <ul class="text-slate-600 text-sm space-y-2 list-disc ml-4">
-                            <li>Monitoreo de eventos de seguridad en firewalls Fortinet.</li>
-                            <li>Gestión de plataformas Trend Micro (Vision One, Apex Central).</li>
-                            <li>Análisis preventivo de incidentes y escalación de amenazas.</li>
+                <div class="space-y-4">
+                    <div class="experience-item">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[10.5px] font-extrabold text-slate-900 uppercase">Analista de Ciberseguridad SOC NI</h3>
+                            <span class="text-[8.5px] font-bold text-blue-600 uppercase">2026</span>
+                        </div>
+                        <p class="text-[9.5px] font-bold text-slate-500 mb-1">Telefónica / Telefonía Tech (CyberSOC)</p>
+                        <ul class="text-[9.5px] text-slate-600 list-disc ml-4 space-y-0.5">
+                            <li>Monitoreo de eventos de seguridad en firewalls Fortigate y plataformas Trend Micro (Vision One, Deep Security, Apex Central).</li>
+                            <li>Gestión de alertas de phishing, spam y malware en Trend Micro Email Security, analizando cuarentenas y hashes.</li>
+                            <li>Elaboración de reportes periódicos cada 4 horas para clientes como GASS, VAZOL y Grupo Empresarial Angeles usando FortiAnalyzer.</li>
+                            <li>Health checks diarios de Deep Security y revisión de vulnerabilidades en FortiGuard PSIRT.</li>
+                            <li>Monitoreo de conexiones SPEI para Banco Sabadell y ejecución de respaldos de configuraciones en FTP interno.</li>
+                            <li>Gestión y seguimiento de tickets en ServiceNow con documentación técnica rigurosa.</li>
                         </ul>
                     </div>
 
-                    <div class="relative pl-6 border-l-2 border-slate-100">
-                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-200 rounded-full border-4 border-white"></div>
-                        <span class="text-xs font-bold text-slate-400 uppercase">2024 - 2026</span>
-                        <h3 class="text-lg font-bold text-slate-900">Especialista MobileIron / Ivanti</h3>
-                        <p class="text-sm font-medium text-slate-500 mb-3">BBVA | Telefónica Tech</p>
-                        <ul class="text-slate-600 text-sm space-y-2 list-disc ml-4">
-                            <li>Administración de más de 52,000 dispositivos móviles a nivel nacional.</li>
-                            <li>Configuración de perfiles de seguridad, VPN y certificados SCEP.</li>
-                            <li>Soporte de nivel 3 para infraestructura MDM.</li>
+                    <div class="experience-item">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[10.5px] font-extrabold text-slate-900 uppercase">Especialista Ivanti / MobileIron – BBVA</h3>
+                            <span class="text-[8.5px] font-bold text-blue-600 uppercase">2024 – 2026</span>
+                        </div>
+                        <p class="text-[9.5px] font-bold text-slate-500 mb-1">Telefonía Tech</p>
+                        <ul class="text-[9.5px] text-slate-600 list-disc ml-4 space-y-0.5">
+                            <li>Administración de plataforma Ivanti Neurons (R121) para flota masiva de celulares y tabletas del banco (52,000 dispositivos).</li>
+                            <li>Altas masivas (Bulk Import CSV) y asignación de unidades especiales (MULTIASISTENCIA, ENGINEERING).</li>
+                            <li>Documentación del Manual Maestro de Administración con 90 políticas técnicas (Identidad/PKI, Hardening, MTD).</li>
+                            <li>Protocolos de evidencia para borrado remoto en casos de robo, jubilación y bajas de inventario.</li>
+                            <li>Gestión de PIN de 6 dígitos, SCEP para certificados y activación de MTD (Zimperium).</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[10.5px] font-extrabold text-slate-900 uppercase">Kanban Master - Gestión de Migración</h3>
+                            <span class="text-[8.5px] font-bold text-blue-600 uppercase">2019 – 2021</span>
+                        </div>
+                        <p class="text-[9.5px] font-bold text-slate-500 mb-1">GOS Consultores</p>
+                        <ul class="text-[9.5px] text-slate-600 list-disc ml-4 space-y-0.5">
+                            <li>Lideré la gestión del Plan de migraciones de la Nueva Arquitectura con NAC Restrictivo, supervisando la migración exitosa de 60 de los 66 edificios regionales.</li>
+                            <li>Colaboración estrecha con equipos internos y externos para cumplimiento de tiempos usando Jira para seguimiento y recursos.</li>
+                            <li>Participación en reuniones diarias para revisar progreso y actualización de tareas en Jira.</li>
+                            <li>Coordinación y solicitud de apoyo de otras áreas técnicas para resolución de necesidades críticas del proyecto.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[10.5px] font-extrabold text-slate-900 uppercase">Ingeniero de Campo</h3>
+                            <span class="text-[8.5px] font-bold text-blue-600 uppercase">2018 – 2019</span>
+                        </div>
+                        <p class="text-[9.5px] font-bold text-slate-500 mb-1">PSI Informática</p>
+                        <ul class="text-[9.5px] text-slate-600 list-disc ml-4 space-y-0.5">
+                            <li>Apoyo en instalación de infraestructura Cisco (Switches, Routers, AP) en proyectos de migración nacional de tiendas.</li>
+                            <li>Soporte técnico a 22 tiendas Soriana en la zona sur y centro de la Ciudad de México.</li>
+                            <li>Configuración de equipos de radiofrecuencia, impresoras de etiquetas y verificadores de precio.</li>
+                            <li>Instalación y soporte a software comercial para puntos de venta y oficinas administrativas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[10.5px] font-extrabold text-slate-900 uppercase">Ingeniero de Soporte Técnico</h3>
+                            <span class="text-[8.5px] font-bold text-blue-600 uppercase">2015 – 2017</span>
+                        </div>
+                        <p class="text-[9.5px] font-bold text-slate-500 mb-1">Tecnología e Ingeniería Luqross</p>
+                        <ul class="text-[9.5px] text-slate-600 list-disc ml-4 space-y-0.5">
+                            <li>Atención técnica integral a 44 estaciones de servicio (gasolineras) a nivel nacional.</li>
+                            <li>Mantenimiento operativo (eléctrico, mecánico e hidráulico) a dispensarios y sistemas de control volumétrico Pemex.</li>
+                            <li>Soporte y configuración de consolas de tanques, servidores y software empresarial.</li>
+                            <li>Instalación de aplicaciones empresariales, PCs y cableado estructural.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
-                    <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Skills Técnicos
-                </h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Seguridad</p>
-                        <p class="text-sm font-bold text-slate-700">Fortinet</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Gestión</p>
-                        <p class="text-sm font-bold text-slate-700">Ivanti UEM</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Cloud</p>
-                        <p class="text-sm font-bold text-slate-700">Google Cloud</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Método</p>
-                        <p class="text-sm font-bold text-slate-700">Scrum / Jira</p>
-                    </div>
+                <h2 class="section-title">Certificaciones y Cursos</h2>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-[8.5px] text-slate-700">
+                    <p>• Google Career Cert. Cybersecurity (2026)</p>
+                    <p>• Fortinet 7.x Expert Training (2026)</p>
+                    <p>• Máster en Seguridad e Hacking (2023)</p>
+                    <p>• Ivanti Neurons MDM Admin/Arch (2024)</p>
+                    <p>• Gerencia de Proyectos (PMP) (2021)</p>
+                    <p>• Ivanti Support Specialist (2024)</p>
+                    <p>• SP1000 Soluciones de Infraestructura Banda Ancha</p>
+                    <p>• Scrum / Instalación CCTV / Analista Junior Ciberseguridad</p>
                 </div>
             </section>
-
-            <div class="pt-8 text-center">
-                <a href="https://wa.me/525644326915" class="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition shadow-xl shadow-emerald-100">
-                    <span>💬</span> Contactar por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <footer class="bg-slate-50 p-8 text-center">
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                Edgar Flores García | Consultoría Profesional TI 2026
-            </p>
-        </footer>
+        </main>
     </div>
-
 </body>
 </html>
+```
