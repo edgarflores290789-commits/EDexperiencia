@@ -3,187 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Profesional - Edgar Flores García</title>
+    <title>Edgar Flores García | Consultor TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; color: #1e293b; }
-        @media print {
-            .no-print { display: none !important; }
-            body { background: white !important; padding: 0 !important; font-size: 8.2pt; }
-            .cv-container { box-shadow: none !important; margin: 0 !important; border: none !important; display: flex !important; flex-direction: row !important; }
-            .sidebar { width: 28% !important; background: #0f172a !important; color: white !important; padding: 1.2rem !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .main-content { width: 72% !important; background: white !important; padding: 1.2rem 1.5rem !important; }
-            @page { margin: 0.4cm; size: letter; }
-            .experience-item { page-break-inside: avoid; margin-bottom: 0.7rem !important; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #0f172a;
         }
-        .photo-circle { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #2563eb; background: #1e293b; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .section-title { border-bottom: 2px solid #e2e8f0; color: #0f172a; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; padding-bottom: 2px; }
-        .experience-item { position: relative; padding-left: 14px; border-left: 2px solid #f1f5f9; margin-bottom: 1rem; }
-        .experience-item::before { content: ''; position: absolute; left: -6px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: #2563eb; }
+
+        .vcard-minimal {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 48px;
+            padding: 44px 28px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .photo-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 32px;
+            border-radius: 50%;
+            padding: 5px;
+            background: #f1f5f9;
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+
+        .photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-blue {
+            background-color: #2563eb;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .btn-blue:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: #f8fafc;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: #f1f5f9;
+            width: 100%;
+            margin: 32px 0;
+        }
+
+        .tag-blue {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Estilo para el contenedor del QR */
+        #qrcode img {
+            margin: 0 auto;
+            padding: 10px;
+            background: white;
+            border-radius: 20px;
+        }
     </style>
 </head>
-<body class="p-0 lg:p-4">
+<body>
 
-    <div class="no-print fixed bottom-6 right-6 z-50">
-        <button onclick="window.print()" class="bg-slate-900 text-white p-3 px-6 rounded-full shadow-2xl hover:bg-blue-700 transition font-bold flex items-center gap-2">
-            <span>&#128424;</span> IMPRIMIR CV
-        </button>
+    <div class="vcard-minimal">
+        <div class="photo-wrapper">
+            <div class="photo-inner">
+                <img src="fotoperfil.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <div class="mb-3">
+                <span class="tag-blue">Ingeniero Senior TI</span>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Edgar Flores García</h1>
+            <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
+        </div>
+
+        <div class="mb-8">
+            <div id="qrcode" class="flex justify-center"></div>
+            <p class="mt-2 text-[9px] font-bold text-slate-400 uppercase tracking-widest">Escanea para compartir</p>
+        </div>
+
+        <div class="space-y-3">
+            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://edgarflores290789-commits.github.io/EDexperiencia/%0AEND:VCARD" 
+               download="Contacto_Edgar_Flores.vcf" 
+               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg">
+                <span class="text-xl">💾</span> Guardar en Contactos
+            </a>
+
+            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
+                <span class="text-xl">&#128196;</span> Ver Currículum Completo
+            </a>
+
+            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
+                <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
+            </a>
+
+            <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">
+                <span class="text-xl">&#128172;</span> WhatsApp Directo
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-3">
+            <a href="tel:5644326915" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
+                <span>&#128222;</span> Llamar
+            </a>
+            <a href="mailto:edgar.flores290789@gmail.com" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
+                <span>&#9993;</span> Correo
+            </a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Empresa & Soluciones</p>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
+                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#127760;</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Servicios TI</span>
+                </a>
+                <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
+                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#128722;</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Tienda Online</span>
+                </a>
+            </div>
+        </div>
+
+        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest text-center">
+            CDMX | 2026
+        </p>
     </div>
 
-    <div class="cv-container max-w-5xl mx-auto flex flex-col md:flex-row bg-white shadow-2xl overflow-hidden rounded-none lg:rounded-xl">
-        
-        <aside class="sidebar w-full md:w-[28%] bg-slate-900 text-white p-5 flex flex-col">
-            <div class="flex flex-col items-center text-center mb-6">
-                <div class="photo-circle mb-3">
-                    <img src="fotoperfil.jpeg" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
-                </div>
-                <h1 class="text-lg font-black leading-tight uppercase">Edgar Flores García</h1>
-                <p class="text-blue-400 text-[8px] font-bold tracking-widest uppercase mt-1">Ingeniero TI</p>
-            </div>
-
-            <div class="space-y-6">
-                <section>
-                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Contacto</h2>
-                    <ul class="space-y-1.5 text-[9px]">
-                        <li>&#9993; edgar.flores290789@gmail.com</li>
-                        <li>&#128222; 56 44 32 69 15</li>
-                        <li class="text-slate-400">&#128205; Prolongación Emiliano Zapata SN, Col. Veintidos de Febrero</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Habilidades Técnicas</h2>
-                    <div class="text-[8.5px] space-y-2 text-slate-300">
-                        <p>• Jira, Microsoft Office, Google Apps, Remedy, ServiceNow, LogMeIn, AnyDesk, TeamViewer.</p>
-                        <p>• Cisco Webex, Zoom, Microsoft Teams.</p>
-                        <p>• Gestión de proyectos, mantenimiento de sistemas informáticos, resolución de problemas técnicos.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Formación</h2>
-                    <div class="text-[9px] space-y-3">
-                        <div>
-                            <p class="font-bold">INGENIERÍA EN TI</p>
-                            <p class="text-slate-400">UT Fidel Velázquez</p>
-                        </div>
-                        <div>
-                            <p class="font-bold">TSU EN TIC</p>
-                            <p class="text-slate-400">Egresado 2012-2014</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-blue-500 font-black text-[8px] uppercase tracking-widest mb-2 border-b border-slate-800 pb-1">Idiomas</h2>
-                    <div class="text-[9px]">
-                        <p>Español: Nativo</p>
-                        <p>Inglés: Técnico (B1)</p>
-                    </div>
-                </section>
-            </div>
-        </aside>
-
-        <main class="main-content w-full md:w-[72%] p-8 bg-white flex flex-col gap-4">
-            <section>
-                <h2 class="section-title">Perfil Profesional</h2>
-                <p class="text-[10px] text-slate-600 leading-relaxed text-justify">
-                    Ingeniero en Tecnologías de la Información con experiencia en administración de plataformas MDM/UEM (Ivanti Neurons) para el sector bancario, así como en monitoreo de ciberseguridad como analista SOC NI. Certificado por Google en Ciberseguridad, Ivanti como especialista en MDM, Fortinet, hacking ético y gerencia de proyectos. Enfoque práctico, orientado a procedimientos documentados y resolución de problemas técnicos.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="section-title">Experiencia Laboral</h2>
-                
-                <div class="space-y-4">
-                    <div class="experience-item">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-[10px] font-extrabold text-slate-900 uppercase">Analista de Ciberseguridad SOC NI</h3>
-                            <span class="text-[8.5px] font-bold text-blue-600">2026</span>
-                        </div>
-                        <p class="text-[9px] font-bold text-slate-500 mb-1">Telefónica / Telefonía Tech (CyberSOC)</p>
-                        <ul class="text-[9px] text-slate-600 list-disc ml-4 space-y-0.5">
-                            <li>Monitoreo de eventos de seguridad en firewalls Fortigate y plataformas Trend Micro (Vision One, Deep Security, Apex Central).</li>
-                            <li>Gestión de alertas de phishing, spam y malware analizando cuarentenas y hashes.</li>
-                            <li>Elaboración de reportes cada 4 horas para clientes usando FortiAnalyzer.</li>
-                            <li>Health checks diarios de Deep Security y revisión de vulnerabilidades en FortiGuard PSIRT.</li>
-                            <li>Monitoreo de conexiones SPEI para Banco y ejecución de respaldos en FTP interno.</li>
-                            <li>Gestión de tickets en ServiceNow con documentación técnica rigurosa.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-[10px] font-extrabold text-slate-900 uppercase">Especialista Ivanti / MobileIron</h3>
-                            <span class="text-[8.5px] font-bold text-blue-600">2024 – 2026</span>
-                        </div>
-                        <p class="text-[9px] font-bold text-slate-500 mb-1">Telefonía Tech</p>
-                        <ul class="text-[9px] text-slate-600 list-disc ml-4 space-y-0.5">
-                            <li>Administración de plataforma Ivanti Neurons para flota de 32,000 dispositivos del banco.</li>
-                            <li>Altas masivas (Bulk Import) y asignación de unidades especiales (ENGINEERING, etc.).</li>
-                            <li>Documentación del Manual Maestro de Administración con 90 políticas técnicas (Identidad, Hardening, MTD).</li>
-                            <li>Protocolos de borrado remoto, gestión de PIN de 6 dígitos, SCEP y activación de MTD (Zimperium).</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-[10px] font-extrabold text-slate-900 uppercase">Kanban Master - Gestión de Migración</h3>
-                            <span class="text-[8.5px] font-bold text-blue-600">2019 – 2021</span>
-                        </div>
-                        <p class="text-[9px] font-bold text-slate-500 mb-1">GOS Consultores</p>
-                        <ul class="text-[9px] text-slate-600 list-disc ml-4 space-y-0.5">
-                            <li>Lideré la gestión del Plan de migraciones de Nueva Arquitectura y NAC Restrictivo, supervisando 60 de los 66 edificios regionales.</li>
-                            <li>Colaboración estrecha con equipos para cumplimiento de tiempos usando Jira para seguimiento de tareas y recursos.</li>
-                            <li>Participación en reuniones diarias (Dailies) para planificar tareas y actualizar estados en Jira.</li>
-                            <li>Coordinación entre áreas técnicas para resolución de necesidades críticas del proyecto.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-[10px] font-extrabold text-slate-900 uppercase">Ingeniero de Campo</h3>
-                            <span class="text-[8.5px] font-bold text-blue-600">2018 – 2019</span>
-                        </div>
-                        <p class="text-[9px] font-bold text-slate-500 mb-1">PSI Informática</p>
-                        <ul class="text-[9px] text-slate-600 list-disc ml-4 space-y-0.5">
-                            <li>Instalación de infraestructura Cisco (Switches, Routers, AP) en proyectos de migración nacional de tiendas.</li>
-                            <li>Soporte técnico a 22 tiendas Soriana (Zona Sur y Centro de CDMX).</li>
-                            <li>Configuración de equipos de radiofrecuencia e impresoras de etiquetas.</li>
-                            <li>Soporte a software comercial para puntos de venta y sistemas administrativos.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-[10px] font-extrabold text-slate-900 uppercase">Ingeniero de Soporte Técnico</h3>
-                            <span class="text-[8.5px] font-bold text-blue-600">2015 – 2017</span>
-                        </div>
-                        <p class="text-[9px] font-bold text-slate-500 mb-1">Tecnología e Ingeniería Luqross</p>
-                        <ul class="text-[9px] text-slate-600 list-disc ml-4 space-y-0.5">
-                            <li>Atención técnica integral a 44 estaciones de servicio (gasolineras) a nivel nacional.</li>
-                            <li>Mantenimiento operativo eléctrico, mecánico e hidráulico a dispensarios y sistemas Pemex.</li>
-                            <li>Soporte a consolas de tanques, servidores y software empresarial en servidores.</li>
-                            <li>Instalación de aplicaciones empresariales, PCs y cableado estructural.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Certificaciones y Cursos</h2>
-                <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-[8.5px] text-slate-700">
-                    <p>• Google Career Cert. Cybersecurity (2026)</p>
-                    <p>• Fortinet 7.x Expert Training (2026)</p>
-                    <p>• Máster en Seguridad e Hacking (2023)</p>
-                    <p>• Ivanti Neurons MDM Admin/Arch (2024)</p>
-                    <p>• Gerencia de Proyectos (PMP) (2021)</p>
-                    <p>• Certificación SP1000 Infraestructura Banda Ancha</p>
-                    <p>• Scrum / Instalación CCTV / Analista Junior Ciberseguridad</p>
-                </div>
-            </section>
-        </main>
-    </div>
+    <script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://edgarflores290789-commits.github.io/EDexperiencia/",
+            width: 140,
+            height: 140,
+            colorDark : "#0f172a",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
 </body>
 </html>
