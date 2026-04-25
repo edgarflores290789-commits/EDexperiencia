@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Flores García | Tarjeta Digital</title>
+    <title>Edgar Flores García | Consultor TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,11 +14,12 @@
         .photo-inner { width: 100%; height: 100%; border-radius: 50%; background: #e2e8f0; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid #ffffff; }
         .btn-blue { background-color: #2563eb; color: white; transition: all 0.2s ease; }
         .btn-blue:hover { background-color: #1d4ed8; transform: translateY(-2px); }
-        .tag-blue { background: #eff6ff; color: #2563eb; padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn-outline { border: 1px solid #e2e8f0; color: #475569; background: #ffffff; transition: all 0.2s ease; }
+        .btn-outline:hover { border-color: #2563eb; color: #2563eb; background: #f8fafc; }
         .section-divider { height: 1px; background: #f1f5f9; width: 100%; margin: 32px 0; }
+        .tag-blue { background: #eff6ff; color: #2563eb; padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
         
-        /* Contenedor del QR con respaldo visual */
-        #qrcode-container { display: flex; justify-content: center; align-items: center; background: #f8fafc; padding: 20px; border-radius: 32px; min-height: 190px; margin-bottom: 2rem; position: relative; }
+        #qrcode-container { display: flex; justify-content: center; align-items: center; background: #f8fafc; padding: 20px; border-radius: 32px; min-height: 190px; margin-bottom: 2rem; }
         #qrcode img { border: 8px solid white; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     </style>
 </head>
@@ -47,22 +48,26 @@
         <div class="space-y-3">
             <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" 
                download="Contacto_Edgar_Flores.vcf" 
-               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition">
+               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg">
                 <span class="text-xl">💾</span> Guardar en Contactos
             </a>
 
-            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue">
+            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
                 <span class="text-xl">&#128196;</span> Ver Currículum Completo
+            </a>
+
+            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
+                <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
             </a>
         </div>
 
         <div class="section-divider"></div>
 
         <div>
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center text-[9px]">Portales de Negocio</p>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Portales de Negocio</p>
             <div class="grid grid-cols-1 gap-3">
                 <a href="https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas" target="_blank" class="flex items-center justify-between p-4 rounded-2xl border border-slate-100 hover:bg-blue-50 transition">
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 text-left">
                         <span class="text-xl">✨</span>
                         <span class="text-[10px] font-bold text-slate-600 uppercase">Nueva Web TecnoSite</span>
                     </div>
@@ -70,7 +75,7 @@
                 </a>
                 
                 <a href="https://tecnositesoluciones.com" target="_blank" class="flex items-center justify-between p-4 rounded-2xl border border-slate-100 hover:bg-blue-50 transition">
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 text-left">
                         <span class="text-xl">🌐</span>
                         <span class="text-[10px] font-bold text-slate-600 uppercase">Servicios TI</span>
                     </div>
@@ -78,7 +83,7 @@
                 </a>
 
                 <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="flex items-center justify-between p-4 rounded-2xl border border-slate-100 hover:bg-blue-50 transition">
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 text-left">
                         <span class="text-xl">🛒</span>
                         <span class="text-[10px] font-bold text-slate-600 uppercase">Tienda Online</span>
                     </div>
@@ -91,11 +96,11 @@
     </div>
 
     <script>
-        function renderQR() {
-            var el = document.getElementById("qrcode");
-            if (el && typeof QRCode !== 'undefined') {
-                el.innerHTML = ""; // Limpiar
-                new QRCode(el, {
+        function generateQR() {
+            var qrContainer = document.getElementById("qrcode");
+            if (qrContainer && typeof QRCode !== 'undefined') {
+                qrContainer.innerHTML = "";
+                new QRCode(qrContainer, {
                     text: "https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas",
                     width: 150,
                     height: 150,
@@ -105,8 +110,9 @@
                 });
             }
         }
-        // Ejecutar con retraso para asegurar que la librería cargó
-        setTimeout(renderQR, 200);
+        // Ejecutar inmediatamente y con un ligero retraso para asegurar carga de librería
+        window.onload = generateQR;
+        setTimeout(generateQR, 300);
     </script>
 </body>
 </html>
