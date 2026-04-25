@@ -3,18 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Flores García | Tarjeta Digital</title>
+    <title>Edgar Flores García | Consultor TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
-        .vcard-minimal { width: 100%; max-width: 420px; background: #ffffff; border-radius: 48px; padding: 40px 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); text-align: center; border: 1px solid #f1f5f9; }
-        .photo-wrapper { width: 130px; height: 130px; margin: 0 auto 24px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, #2563eb, #3b82f6); position: relative; }
-        .photo-inner { width: 100%; height: 100%; border-radius: 50%; background: #e2e8f0; overflow: hidden; border: 4px solid #ffffff; }
-        .btn-primary { background-color: #2563eb; color: white; transition: all 0.3s ease; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.3); }
-        #qrcode img { margin: 0 auto; border: 12px solid white; border-radius: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: #0f172a;
+        }
+
+        .vcard-minimal {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 48px;
+            padding: 44px 28px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .photo-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 32px;
+            border-radius: 50%;
+            padding: 5px;
+            background: #f1f5f9;
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+
+        .photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-blue {
+            background-color: #2563eb;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .btn-blue:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: #f8fafc;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: #f1f5f9;
+            width: 100%;
+            margin: 32px 0;
+        }
+
+        .tag-blue {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        #qrcode img {
+            margin: 0 auto;
+            border: 8px solid white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body>
@@ -26,65 +113,65 @@
             </div>
         </div>
 
+        <div class="mb-6">
+            <div class="mb-3">
+                <span class="tag-blue">Ingeniero Senior TI</span>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Edgar Flores García</h1>
+            <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
+        </div>
+
         <div class="mb-8">
-            <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Ingeniero TI & Ciberseguridad</span>
-            <h1 class="text-2xl font-black text-slate-900 mt-3 mb-1">Edgar Flores García</h1>
-            <p class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">Especialista MDM (Ivanti) | SOC Analyst N1</p>
-        </div>
-
-        <div class="text-left bg-slate-50 p-5 rounded-3xl mb-6 space-y-3">
-            <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest text-center border-b pb-2">Experiencia Destacada</p>
-            <div class="text-[10px] text-slate-600 leading-tight">
-                <strong>• BBVA (Ivanti Neurons):</strong> Administración de 52,000 dispositivos móviles y políticas MTD.
-            </div>
-            <div class="text-[10px] text-slate-600 leading-tight">
-                <strong>• CyberSOC (Telefónica):</strong> Monitoreo Fortigate, Trend Micro y conexiones SPEI Sabadell.
-            </div>
-            <div class="text-[10px] text-slate-600 leading-tight">
-                <strong>• Soporte TI Nacional:</strong> Atención a 44 gasolineras (Luqross) y 22 tiendas Soriana (PSI).
-            </div>
-        </div>
-
-        <div class="bg-white p-4 rounded-[32px] mb-8 border border-slate-100">
-            <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Escanea para compartir mi CV</p>
             <div id="qrcode" class="flex justify-center"></div>
+            <p class="mt-3 text-[9px] font-bold text-slate-400 uppercase tracking-widest text-center">Escanea para compartir contacto</p>
         </div>
 
         <div class="space-y-3">
-            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATITLE:Ingeniero Senior TI%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://tecnositesoluciones.com%0AEND:VCARD" 
+            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://edgarflores290789-commits.github.io/EDexperiencia/%0AEND:VCARD" 
                download="Contacto_Edgar_Flores.vcf" 
-               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 border border-emerald-100 hover:bg-emerald-100 transition">
-                <span>💾</span> Guardar en Contactos
+               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg">
+                <span class="text-xl">💾</span> Guardar en Contactos
             </a>
 
-            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-primary">
-                <span>📄</span> Ver Experiencia Detallada
+            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
+                <span class="text-xl">&#128196;</span> Ver Currículum Completo
             </a>
 
-            <div class="grid grid-cols-2 gap-3">
-                <a href="https://tecnositesoluciones.com" target="_blank" class="flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-100 text-slate-600 hover:bg-slate-50 transition">
-                    <span class="text-xl mb-1">🌐</span>
-                    <span class="text-[8px] font-bold uppercase">Web</span>
+            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
+                <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
+            </a>
+
+            <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">
+                <span class="text-xl">&#128172;</span> WhatsApp Directo
+            </a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Empresa & Soluciones</p>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
+                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#127760;</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Servicios TI</span>
                 </a>
-                <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-100 text-slate-600 hover:bg-slate-50 transition">
-                    <span class="text-xl mb-1">💼</span>
-                    <span class="text-[8px] font-bold uppercase">LinkedIn</span>
+                <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
+                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#128722;</span>
+                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Tienda Online</span>
                 </a>
             </div>
         </div>
 
-        <footer class="mt-8">
-            <p class="text-[9px] text-slate-300 font-bold uppercase tracking-widest">CDMX | 2026</p>
-        </footer>
+        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest text-center">
+            CDMX | 2026
+        </p>
     </div>
 
     <script>
-        // QR apuntando a tu URL real de GitHub
-        var miUrl = "https://edgarflores290789-commits.github.io/EDexperiencia/";
         new QRCode(document.getElementById("qrcode"), {
-            text: miUrl,
-            width: 160,
-            height: 160,
+            text: "https://edgarflores290789-commits.github.io/EDexperiencia/",
+            width: 150,
+            height: 150,
             colorDark : "#0f172a",
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
