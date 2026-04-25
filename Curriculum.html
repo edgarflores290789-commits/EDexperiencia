@@ -96,12 +96,12 @@
             letter-spacing: 0.05em;
         }
 
-        /* Estilo para el contenedor del QR */
+        /* Contenedor del QR */
         #qrcode img {
             margin: 0 auto;
-            padding: 10px;
-            background: white;
-            border-radius: 20px;
+            border: 8px solid white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
     </style>
 </head>
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="mb-10">
+        <div class="mb-6">
             <div class="mb-3">
                 <span class="tag-blue">Ingeniero Senior TI</span>
             </div>
@@ -124,7 +124,7 @@
 
         <div class="mb-8">
             <div id="qrcode" class="flex justify-center"></div>
-            <p class="mt-2 text-[9px] font-bold text-slate-400 uppercase tracking-widest">Escanea para compartir</p>
+            <p class="mt-3 text-[9px] font-bold text-slate-400 uppercase tracking-widest text-center">Escanea para compartir contacto</p>
         </div>
 
         <div class="space-y-3">
@@ -144,15 +144,6 @@
 
             <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">
                 <span class="text-xl">&#128172;</span> WhatsApp Directo
-            </a>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3 mt-3">
-            <a href="tel:5644326915" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
-                <span>&#128222;</span> Llamar
-            </a>
-            <a href="mailto:edgar.flores290789@gmail.com" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
-                <span>&#9993;</span> Correo
             </a>
         </div>
 
@@ -178,10 +169,11 @@
     </div>
 
     <script>
+        // Generador de QR dinámico apuntando a tu URL de GitHub
         new QRCode(document.getElementById("qrcode"), {
             text: "https://edgarflores290789-commits.github.io/EDexperiencia/",
-            width: 140,
-            height: 140,
+            width: 150,
+            height: 150,
             colorDark : "#0f172a",
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
