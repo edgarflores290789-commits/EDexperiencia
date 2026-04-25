@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Flores García | Consultor TI</title>
+    <title>Edgar Flores García | Ingeniero TI & Ciberseguridad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Paleta: Fondo Slate-50, Acentos en Azul Cobalto (#2563eb). Minimalismo Pro. -->
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -25,21 +24,20 @@
             max-width: 420px;
             background: #ffffff;
             border: 1px solid #f1f5f9;
-            border-radius: 48px;
-            padding: 44px 28px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border-radius: 40px;
+            padding: 40px 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
         .photo-wrapper {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 32px;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 28px;
             border-radius: 50%;
-            padding: 5px;
-            background: #f1f5f9;
+            padding: 4px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             position: relative;
-            border: 1px solid #e2e8f0;
         }
 
         .photo-inner {
@@ -51,18 +49,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #ffffff;
+            border: 4px solid #ffffff;
         }
 
         .btn-blue {
             background-color: #2563eb;
             color: white;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-blue:hover {
             background-color: #1d4ed8;
             transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
         }
 
         .btn-outline {
@@ -80,88 +79,85 @@
 
         .section-divider {
             height: 1px;
-            background: #f1f5f9;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
             width: 100%;
-            margin: 32px 0;
+            margin: 28px 0;
         }
 
         .tag-blue {
             background: #eff6ff;
             color: #2563eb;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 99px;
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
 
     <div class="vcard-minimal">
-        <!-- Perfil con imagen permanente vinculada -->
         <div class="photo-wrapper">
             <div class="photo-inner">
                 <img src="fotoperfil.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
             </div>
         </div>
 
-        <!-- Identidad -->
-        <div class="mb-10">
+        <div class="mb-8">
             <div class="mb-3">
-                <span class="tag-blue">Ingeniero Senior TI</span>
+                <span class="tag-blue">Ingeniero TI</span>
             </div>
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Edgar Flores García</h1>
-            <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
+            <h1 class="text-2xl font-black text-slate-900 tracking-tight mb-1">Edgar Flores García</h1>
+            <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Ciberseguridad & Administración MDM</p>
         </div>
 
-        <!-- Acciones Principales -->
         <div class="space-y-3">
-            <!-- El enlace debe coincidir exactamente con el nombre del archivo en tu repositorio -->
-            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue shadow-lg shadow-blue-200">
-                <span class="text-xl">&#128196;</span> Ver Currículum Completo
+            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-blue">
+                <span class="text-xl">📄</span> Ver Currículum Interactivo
             </a>
 
             <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm btn-outline">
-                <span class="text-xl">&#128188;</span> Perfil Profesional LinkedIn
+                <span class="text-xl">💼</span> LinkedIn Professional
             </a>
 
-            <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition">
-                <span class="text-xl">&#128172;</span> WhatsApp Directo
+            <a href="https://wa.me/525644326915" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition border border-emerald-100">
+                <span class="text-xl">💬</span> WhatsApp Directo
             </a>
         </div>
 
-        <!-- Contacto Directo -->
         <div class="grid grid-cols-2 gap-3 mt-3">
             <a href="tel:5644326915" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
-                <span>&#128222;</span> Llamar
+                <span>📞</span> Llamar
             </a>
             <a href="mailto:edgar.flores290789@gmail.com" class="flex items-center justify-center gap-2 py-3 rounded-2xl btn-outline text-xs font-bold">
-                <span>&#9993;</span> Correo
+                <span>✉️</span> Email
             </a>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- Portales de Negocio -->
         <div>
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Empresa & Soluciones</p>
-            <div class="grid grid-cols-2 gap-4">
+            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Empresa & Soluciones</p>
+            <div class="grid grid-cols-2 gap-3">
                 <a href="https://tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
-                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#127760;</span>
-                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Servicios TI</span>
+                    <span class="text-2xl block mb-1 group-hover:scale-110 transition-transform">🌐</span>
+                    <span class="text-[9px] font-extrabold text-slate-600 uppercase block">TecnoSite</span>
                 </a>
                 <a href="https://tienda.tecnositesoluciones.com" target="_blank" class="group p-4 rounded-3xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-center">
-                    <span class="text-2xl block mb-2 group-hover:scale-110 transition-transform">&#128722;</span>
-                    <span class="text-[9px] font-bold text-slate-600 uppercase block">Tienda Online</span>
+                    <span class="text-2xl block mb-1 group-hover:scale-110 transition-transform">🛒</span>
+                    <span class="text-[9px] font-extrabold text-slate-600 uppercase block">Tienda Online</span>
                 </a>
             </div>
         </div>
 
-        <p class="mt-12 text-[9px] text-slate-300 font-bold uppercase tracking-widest text-center">
-            CDMX | 2026
-        </p>
+        <footer class="mt-10">
+            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                CDMX | 2026
+            </p>
+        </footer>
     </div>
 
 </body>
