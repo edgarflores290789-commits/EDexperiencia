@@ -10,42 +10,107 @@
     <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- html2canvas para capturar la tarjeta como imagen -->
+    <!-- html2canvas para capturar -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- Fuente profesional -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Estilos para la página y la tarjeta visible (la que tú ya tenías, pero mejorada) */
         body {
-            background: #e2e8f0;
+            background: #f1f5f9;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
             font-family: 'Inter', sans-serif;
             padding: 20px;
         }
-        /* Tarjeta de presentación estilo físico (horizontal) */
-        .tarjeta {
-            max-width: 700px;
+        /* Tarjeta visible (tu diseño original mejorado) */
+        .tarjeta-visible {
+            max-width: 420px;
             width: 100%;
             background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
-            overflow: hidden;
-            transition: transform 0.2s;
-            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 48px;
+            padding: 28px 24px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #eef2ff;
+            margin-bottom: 24px;
         }
-        /* Contenido interno: dos columnas (info + QR) */
-        .contenido-tarjeta {
+        .foto-perfil {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .nombre {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .badge {
+            background: #e0e7ff;
+            color: #1e40af;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 12px 0 8px;
+        }
+        .descripcion {
+            color: #334155;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .boton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .boton-wa { background: #25D366; color: white; }
+        .boton-contacto { background: #0f172a; color: white; }
+        .boton-web { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
+        .boton-descarga { background: #7c3aed; color: white; margin-top: 8px; }
+
+        /* ---------------- TARJETA OCULTA (para la imagen) ---------------- */
+        /* Esta tarjeta NO se ve en la página, solo se usa para generar el JPG */
+        .tarjeta-oculta {
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+            visibility: hidden;
+            width: 700px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: none;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        .contenido-horizontal {
             display: flex;
             flex-wrap: wrap;
         }
-        .info {
+        .info-horizontal {
             flex: 2;
             padding: 28px 20px 28px 28px;
         }
-        .qr-area {
+        .qr-horizontal {
             flex: 1;
             background: #f9fafb;
             display: flex;
@@ -55,11 +120,10 @@
             padding: 20px;
             border-left: 1px dashed #cbd5e1;
         }
-        .qr-area img {
+        .qr-horizontal img {
             width: 130px;
             height: 130px;
             border-radius: 16px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .qr-texto {
             font-size: 10px;
@@ -67,23 +131,20 @@
             margin-top: 12px;
             text-align: center;
         }
-        .foto-perfil {
+        .foto-horizontal {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             margin-bottom: 16px;
         }
-        .nombre {
-            font-size: 24px;
+        .nombre-horizontal {
+            font-size: 22px;
             font-weight: 800;
             color: #0f172a;
-            letter-spacing: -0.3px;
         }
-        .titulo {
-            font-size: 14px;
+        .titulo-horizontal {
+            font-size: 13px;
             font-weight: 600;
             color: #2563eb;
             background: #dbeafe;
@@ -92,201 +153,112 @@
             border-radius: 30px;
             margin: 12px 0 8px;
         }
-        .descripcion {
-            font-size: 13px;
+        .descripcion-horizontal {
+            font-size: 12px;
             color: #334155;
-            line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
-        .botones {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        .boton {
-            display: flex;
+        .boton-horizontal {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 12px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 13px;
+            gap: 6px;
+            background: #0f172a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 11px;
             text-decoration: none;
-            transition: all 0.2s;
         }
-        .boton-wa { background: #25D366; color: white; }
-        .boton-contacto { background: #1e293b; color: white; }
-        .boton-web { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
-        .boton-imagen { background: #7c3aed; color: white; margin-top: 16px; width: 100%; justify-content: center; }
         @media (max-width: 550px) {
-            .contenido-tarjeta { flex-direction: column; }
-            .qr-area { border-left: none; border-top: 1px dashed #cbd5e1; flex-direction: row; gap: 20px; justify-content: center; padding: 20px; }
-            .info { padding: 24px; text-align: center; }
-            .foto-perfil { margin-left: auto; margin-right: auto; }
+            .contenido-horizontal { flex-direction: column; }
+            .qr-horizontal { border-left: none; border-top: 1px dashed #cbd5e1; flex-direction: row; gap: 16px; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-<div class="tarjeta" id="tarjetaParaCapturar">
-    <div class="contenido-tarjeta">
-        <!-- Columna izquierda: datos y botones -->
-        <div class="info">
-            <img src="fotoperfil.jpeg" alt="Edgar Flores" class="foto-perfil" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
-            <div class="nombre">Edgar Flores García</div>
-            <div class="titulo">Ingeniero en Tecnologías TI</div>
-            <div class="descripcion">
-                Ciberseguridad · Soporte remoto · CCTV · Migraciones de red
-            </div>
-            <div class="botones">
-                <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20necesito%20soporte%20técnico" target="_blank" class="boton boton-wa">
-                    📲 Contáctame por WhatsApp
-                </a>
-                <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" download="Contacto_Edgar_Flores.vcf" class="boton boton-contacto">
-                    💾 Guardar contacto
-                </a>
-                <a href="https://tecnositesoluciones.com" target="_blank" class="boton boton-web">
-                    🌐 Visitar TecnoSite
-                </a>
-            </div>
-        </div>
-        <!-- Columna derecha: QR + texto -->
-        <div class="qr-area">
-            <img id="qrImagen" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/525644326915" alt="Código QR">
-            <div class="qr-texto">
-                Escanea para<br>contactar directo
-            </div>
-        </div>
+<!-- TARJETA VISIBLE (la que ven tus clientes en la página) -->
+<div class="tarjeta-visible">
+    <img src="fotoperfil.jpeg" alt="Edgar Flores" class="foto-perfil" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
+    <div class="nombre">Edgar Flores García</div>
+    <div class="badge">Ingeniería en TI</div>
+    <div class="descripcion">
+        Ciberseguridad · Soporte remoto · CCTV · Migraciones
+    </div>
+    <div class="botones">
+        <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20necesito%20soporte" target="_blank" class="boton boton-wa">
+            📲 Contactar por WhatsApp
+        </a>
+        <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" download="Contacto_Edgar_Flores.vcf" class="boton boton-contacto">
+            💾 Guardar contacto (VCF)
+        </a>
+        <a href="https://tecnositesoluciones.com" target="_blank" class="boton boton-web">
+            🌐 TecnoSite Soluciones
+        </a>
+        <!-- Botón para descargar la tarjeta física (horizontal con QR) -->
+        <button id="btnGenerarTarjetaFisica" class="boton boton-descarga">
+            📸 Descargar tarjeta física (con QR)
+        </button>
     </div>
 </div>
 
-<!-- Botón para descargar la tarjeta como imagen JPG -->
-<div style="max-width:700px; margin-top: 24px; width:100%;">
-    <button id="btnDescargarTarjeta" class="boton boton-imagen" style="background:#7c3aed;">
-        📸 Descargar tarjeta como imagen (JPG)
-    </button>
+<!-- TARJETA OCULTA (solo se usa para generar la imagen JPG, no se ve en la página) -->
+<div id="tarjetaFisicaOculta" class="tarjeta-oculta">
+    <div class="contenido-horizontal">
+        <div class="info-horizontal">
+            <img src="fotoperfil.jpeg" alt="Edgar Flores" class="foto-horizontal">
+            <div class="nombre-horizontal">Edgar Flores García</div>
+            <div class="titulo-horizontal">Ingeniero en Tecnologías TI</div>
+            <div class="descripcion-horizontal">
+                Ciberseguridad · Soporte remoto · CCTV · Migraciones de red
+            </div>
+            <div style="margin-top: 12px;">
+                <span class="boton-horizontal">📞 56 44 32 69 15</span>
+                <span class="boton-horizontal" style="margin-left: 8px; background:#2563eb;">✉️ edgar.flores290789@gmail.com</span>
+            </div>
+        </div>
+        <div class="qr-horizontal">
+            <img id="qrOculto" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/525644326915" alt="QR">
+            <div class="qr-texto">
+                Escanea para contactar<br>directo por WhatsApp
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-    // Función para asegurar que el QR se carga bien antes de capturar
-    document.getElementById('btnDescargarTarjeta').addEventListener('click', function() {
-        const elemento = document.getElementById('tarjetaParaCapturar');
-        // Mostrar un pequeño mensaje de "generando..."
+    document.getElementById('btnGenerarTarjetaFisica').addEventListener('click', function() {
         const boton = this;
         const textoOriginal = boton.innerHTML;
-        boton.innerHTML = "⏳ Generando imagen, espere...";
+        boton.innerHTML = "⏳ Generando tarjeta...";
         boton.disabled = true;
 
-        // Esperar un momento para que cualquier imagen termine de cargar
+        // Tomamos el elemento oculto
+        const elemento = document.getElementById('tarjetaFisicaOculta');
+        
+        // Aseguramos que el QR esté bien cargado (esperamos medio segundo)
         setTimeout(() => {
             html2canvas(elemento, {
-                scale: 2.5,          // Alta resolución
+                scale: 2.8,
                 backgroundColor: '#ffffff',
-                useCORS: true,       // Permite imágenes externas (el QR)
-                logging: false,
-                allowTaint: false
+                useCORS: true,
+                logging: false
             }).then(canvas => {
-                // Crear enlace de descarga
                 const enlace = document.createElement('a');
-                enlace.download = 'Tarjeta_TecnoSite_Edgar.jpg';
+                enlace.download = 'Tarjeta_Fisica_TecnoSite.jpg';
                 enlace.href = canvas.toDataURL('image/jpeg', 0.95);
                 enlace.click();
-                // Restaurar botón
                 boton.innerHTML = textoOriginal;
                 boton.disabled = false;
             }).catch(error => {
-                console.error('Error al capturar:', error);
-                boton.innerHTML = "❌ Error, recarga e intenta";
+                console.error(error);
+                boton.innerHTML = "❌ Error, recarga la página";
                 boton.disabled = false;
-                alert("Hubo un error. Si el QR no sale, actualiza la página.");
+                alert("No se pudo generar la imagen. Intenta de nuevo.");
             });
-        }, 500);
+        }, 600);
     });
 </script>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Edgar Flores García | Consultor TI" />
-    <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, soporte remoto y mantenimiento de CCTV. Contáctame." />
-    <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
-    <title>Edgar Flores García | Consultor TI</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; color: #0f172a; }
-        .vcard-minimal { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #f1f5f9; border-radius: 48px; padding: 44px 28px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); text-align: center; }
-        .photo-wrapper { width: 150px; height: 150px; margin: 0 auto 32px; border-radius: 50%; overflow: hidden; background: #f1f5f9; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .qr-container { display: flex; justify-content: center; margin-bottom: 2rem; background: #f8fafc; padding: 20px; border-radius: 32px; }
-        .qr-container img { border: 8px solid white; border-radius: 16px; width: 160px; height: 160px; }
-    </style>
-</head>
-<body>
-    <div class="vcard-minimal">
-        <div class="photo-wrapper">
-             <img src="fotoperfil.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
-        </div>
-
-        <div class="mb-6">
-            <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Ingeniero TI</span>
-            <h1 class="text-3xl font-extrabold text-slate-900 mt-3 mb-1">Edgar Flores García</h1>
-            <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
-        </div>
-
-        <div class="qr-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://edgarflores290789-commits.github.io/EDexperiencia/" alt="QR">
-        </div>
-
-        <div class="space-y-3">
-            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" 
-               download="Contacto_Edgar_Flores.vcf" 
-               class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition">
-                <span>💾</span> Guardar en Contactos
-            </a>
-
-            <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-blue-600 text-white">
-                <span>📄</span> Ver Currículum Completo
-            </a>
-
-            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm border border-slate-200">
-                <span>💼</span> LinkedIn Profesional
-            </a>
-            <button id="btn-capturar" class="w-full mt-4 py-3 rounded-2xl font-bold text-sm bg-purple-600 text-white">
-            📸 Guardar tarjeta como imagen
-            </button>
-
-            <!-- La magia: instrucción para html2canvas -->
-            <script>
-            document.getElementById('btn-capturar').addEventListener('click', function() {
-            // Selecciona el elemento que quieres capturar (la tarjeta completa)
-            const elemento = document.querySelector('.vcard-minimal'); 
-
-            // Configuración para una imagen bonita y nítida
-            html2canvas(elemento, {
-            scale: 2, // Hace la imagen más nítida
-            backgroundColor: '#ffffff', // Fondo blanco limpio
-            }).then(canvas => {
-            // Convierte el canvas a un enlace de descarga
-            const enlace = document.createElement('a');
-            enlace.download = 'tarjeta_tecnosite.jpg';
-            enlace.href = canvas.toDataURL('image/jpeg', 0.9);
-            enlace.click(); // ¡Esto inicia la descarga!
-        });
-    });
-</script>
-        </div>
-
-        <div class="grid grid-cols-1 gap-2 mt-6">
-            <a href="https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas" class="text-[10px] font-bold text-blue-600 uppercase">✨ Soluciones Empresariales</a>
-            <a href="https://tecnositesoluciones.com" class="text-[10px] font-bold text-slate-500 uppercase">🌐 Servicios TI</a>
-            <a href="https://tienda.tecnositesoluciones.com" class="text-[10px] font-bold text-slate-500 uppercase">🛒 Tienda Online</a>
-        </div>
-    </div>
 </body>
 </html>
