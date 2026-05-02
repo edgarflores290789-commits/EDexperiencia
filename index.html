@@ -2,230 +2,96 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Edgar Flores García | TecnoSite Soluciones</title>
-    <meta property="og:title" content="Edgar Flores García | Consultor TI" />
-    <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, soporte remoto y mantenimiento de CCTV." />
-    <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgar Flores García | Consultor TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #e2e8f0;
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; color: #0f172a; }
+        .vcard-minimal { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #f1f5f9; border-radius: 48px; padding: 44px 28px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); text-align: center; }
+        .photo-wrapper { width: 150px; height: 150px; margin: 0 auto 32px; border-radius: 50%; padding: 5px; background: #f1f5f9; border: 1px solid #e2e8f0; overflow: hidden; }
+        .photo-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .qr-container { display: flex; justify-content: center; margin-bottom: 2rem; background: #f8fafc; padding: 20px; border-radius: 32px; }
+        .qr-container img { border: 8px solid white; border-radius: 16px; width: 160px; height: 160px; }
+        
+        /* Estilo único para todos los botones azules */
+        .btn-azul {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            padding: 20px;
-        }
-
-        /* Única tarjeta: medidas exactas de impresión 8.9cm x 5.1cm (1050px x 600px a 300dpi) */
-        .tarjeta {
-            width: 1050px;
-            max-width: 100%;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
-            display: flex;
-            flex-wrap: wrap;
-            overflow: hidden;
-        }
-
-        /* Columna izquierda: información y botones */
-        .col-info {
-            flex: 2;
-            padding: 32px 28px;
-            background: white;
-        }
-
-        /* Columna derecha: QR */
-        .col-qr {
-            flex: 1;
-            background: #f8fafc;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 24px;
-            border-left: 1px solid #e2e8f0;
-            text-align: center;
-        }
-
-        .foto {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 16px;
-            border: 3px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .nombre {
-            font-size: 28px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 4px;
-        }
-
-        .badge {
-            background: #dbeafe;
-            color: #1e40af;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 40px;
-            margin: 8px 0 10px;
-        }
-
-        .descripcion {
-            font-size: 14px;
-            color: #334155;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .botones {
-            display: flex;
-            flex-direction: column;
             gap: 10px;
-        }
-
-        .boton {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 12px;
+            width: 100%;
+            padding: 12px;
             border-radius: 40px;
-            font-weight: 600;
-            font-size: 13px;
+            font-weight: bold;
+            font-size: 14px;
             text-decoration: none;
             background: #1e40af;
             color: white;
             border: none;
             cursor: pointer;
             transition: background 0.2s;
-            width: 100%;
         }
-
-        .boton:hover {
-            background: #1e3a8a;
-        }
-
-        .qr-imagen {
-            width: 150px;
-            height: 150px;
-            border-radius: 16px;
-            margin-bottom: 12px;
-        }
-
-        .qr-texto {
-            font-size: 12px;
-            color: #475569;
-        }
-
-        .enlaces-footer {
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .enlace-footer {
-            font-size: 10px;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        /* En móvil se apila para mejor visualización, pero la descarga sigue teniendo el tamaño grande */
-        @media (max-width: 700px) {
-            .tarjeta {
-                flex-direction: column;
-                width: 100%;
-            }
-            .col-qr {
-                border-left: none;
-                border-top: 1px solid #e2e8f0;
-                flex-direction: row;
-                gap: 20px;
-                justify-content: center;
-            }
-            .qr-imagen {
-                width: 100px;
-                height: 100px;
-            }
-        }
+        .btn-azul:hover { background: #1e3a8a; }
     </style>
 </head>
 <body>
 
-<div class="tarjeta" id="tarjetaImprimible">
-    <div class="col-info">
-        <img src="fotoperfil.jpeg" alt="Edgar Flores" class="foto" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
-        <div class="nombre">Edgar Flores García</div>
-        <div class="badge">Ingeniero en Tecnologías TI</div>
-        <div class="descripcion">
-            Ciberseguridad · Soporte remoto · CCTV · Migraciones de red
-        </div>
-        <div class="botones">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20vi%20tu%20tarjeta%20y%20necesito%20soporte" target="_blank" class="boton">
-                📲 Contactar por WhatsApp
-            </a>
-            <!-- Guardar contacto VCF -->
-            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" download="Contacto_Edgar_Flores.vcf" class="boton">
-                💾 Guardar contacto (vCard)
-            </a>
-            <!-- Currículum -->
-            <a href="Curriculum.html" class="boton">
-                📄 Ver currículum completo
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="boton">
-                💼 LinkedIn
-            </a>
-            <!-- Botón Compartir (nativo) -->
-            <button id="btnCompartir" class="boton">
-                🔗 Compartir tarjeta digital
-            </button>
-            <!-- Botón Descargar para imprimir exactamente 8.9x5.1 cm -->
-            <button id="btnDescargar" class="boton">
-                🖨️ Descargar para imprimir (8.9x5.1 cm)
-            </button>
-        </div>
-        <div class="enlaces-footer">
-            <a href="https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas" class="enlace-footer" style="color:#1e40af;">✨ Soluciones Empresariales</a>
-            <a href="https://tecnositesoluciones.com" class="enlace-footer" style="color:#2563eb;">🌐 Servicios TI</a>
-            <a href="https://tienda.tecnositesoluciones.com" class="enlace-footer" style="color:#3b82f6;">🛒 Tienda Online</a>
-        </div>
+<!-- TU TARJETA ORIGINAL (EXACTAMENTE COMO ESTABA, SIN NINGÚN CAMBIO) -->
+<div id="tarjetaOriginal" class="vcard-minimal">
+    <div class="photo-wrapper">
+        <img src="fotoperfil.jpeg" alt="Edgar Flores García" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
     </div>
-    <div class="col-qr">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/525644326915" alt="QR WhatsApp" class="qr-imagen">
-        <div class="qr-texto">Escanea para<br>contactar directo</div>
+    <div class="mb-6">
+        <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Ingeniero TI</span>
+        <h1 class="text-3xl font-extrabold text-slate-900 mt-3 mb-1">Edgar Flores García</h1>
+        <p class="text-slate-500 text-sm font-medium">Ciberseguridad & Ecosistemas Digitales</p>
+    </div>
+    <div class="qr-container">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://edgarflores290789-commits.github.io/EDexperiencia/" alt="QR">
+    </div>
+    <div class="space-y-3">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20vi%20tu%20tarjeta%20y%20necesito%20soporte" target="_blank" class="btn-azul">
+            📲 Contactar por WhatsApp
+        </a>
+        <!-- Guardar contacto (ya lo tenías) -->
+        <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" download="Contacto_Edgar_Flores.vcf" class="btn-azul">
+            💾 Guardar en Contactos
+        </a>
+        <!-- Currículum -->
+        <a href="Curriculum.html" class="btn-azul">
+            📄 Ver Currículum Completo
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="btn-azul">
+            💼 LinkedIn Profesional
+        </a>
+        <!-- Botón Compartir -->
+        <button id="btnCompartir" class="btn-azul">
+            🔗 Compartir tarjeta digital
+        </button>
+        <!-- Botón Descargar para imprimir en 8.9x5.1 cm -->
+        <button id="btnDescargar" class="btn-azul">
+            🖨️ Descargar para imprimir (8.9x5.1 cm)
+        </button>
+    </div>
+    <div class="grid grid-cols-1 gap-2 mt-6">
+        <a href="https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas" class="text-[10px] font-bold text-blue-600 uppercase">✨ Soluciones Empresariales</a>
+        <a href="https://tecnositesoluciones.com" class="text-[10px] font-bold text-slate-500 uppercase">🌐 Servicios TI</a>
+        <a href="https://tienda.tecnositesoluciones.com" class="text-[10px] font-bold text-slate-500 uppercase">🛒 Tienda Online</a>
     </div>
 </div>
 
 <script>
-    // Botón COMPARTIR
-    const btnCompartir = document.getElementById('btnCompartir');
-    btnCompartir.addEventListener('click', () => {
+    // Botón Compartir (nativo o copiar enlace)
+    document.getElementById('btnCompartir').addEventListener('click', function() {
         const url = window.location.href;
         if (navigator.share) {
             navigator.share({
                 title: 'Edgar Flores García - Consultor TI',
-                text: 'Tarjeta profesional de Edgar Flores, especialista en ciberseguridad y soporte TI.',
+                text: 'Tarjeta profesional de Edgar Flores, especialista en ciberseguridad y soporte técnico.',
                 url: url
             }).catch(err => console.log('Compartir cancelado o error:', err));
         } else {
@@ -237,34 +103,70 @@
         }
     });
 
-    // Botón DESCARGAR para imprimir en tamaño real 8.9x5.1 cm
-    const btnDescargar = document.getElementById('btnDescargar');
-    btnDescargar.addEventListener('click', function() {
+    // Botón Descargar: captura tu tarjeta original y la centra en un lienzo de 1050x600px (8.9x5.1cm a 300dpi)
+    document.getElementById('btnDescargar').addEventListener('click', function() {
         const boton = this;
         const textoOriginal = boton.innerHTML;
         boton.innerHTML = "⏳ Generando imagen tamaño tarjeta...";
         boton.disabled = true;
 
-        const elemento = document.getElementById('tarjetaImprimible');
+        const elemento = document.getElementById('tarjetaOriginal');
 
-        // Como el elemento ya tiene 1050px de ancho (equivale a 8.9cm a 300dpi), capturamos con scale=1
+        // Primero capturamos la tarjeta original a su tamaño actual (aprox 420px de ancho)
         html2canvas(elemento, {
-            scale: 1,
-            backgroundColor: '#ffffff',
+            scale: 2,  // para buena resolución
+            backgroundColor: '#f8fafc',
             useCORS: true,
             logging: false
-        }).then(canvas => {
+        }).then(canvasOriginal => {
+            // Crear un canvas del tamaño exacto de impresión: 1050 x 600 px
+            const anchoMeta = 1050;
+            const altoMeta = 600;
+            const canvasFinal = document.createElement('canvas');
+            canvasFinal.width = anchoMeta;
+            canvasFinal.height = altoMeta;
+            const ctx = canvasFinal.getContext('2d');
+
+            // Rellenar con el mismo color de fondo de tu página
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(0, 0, anchoMeta, altoMeta);
+
+            // Calcular el tamaño y posición para centrar la tarjeta original dentro del lienzo
+            const proporcionTarjeta = canvasOriginal.width / canvasOriginal.height;
+            const proporcionLienzo = anchoMeta / altoMeta;
+
+            let anchoDibujo, altoDibujo, xOffset, yOffset;
+
+            if (proporcionTarjeta > proporcionLienzo) {
+                // La tarjeta es más ancha en proporción: se ajusta al ancho
+                anchoDibujo = anchoMeta;
+                altoDibujo = anchoMeta / proporcionTarjeta;
+                xOffset = 0;
+                yOffset = (altoMeta - altoDibujo) / 2;
+            } else {
+                // La tarjeta es más alta: se ajusta al alto
+                altoDibujo = altoMeta;
+                anchoDibujo = altoMeta * proporcionTarjeta;
+                xOffset = (anchoMeta - anchoDibujo) / 2;
+                yOffset = 0;
+            }
+
+            // Dibujar la tarjeta centrada
+            ctx.drawImage(canvasOriginal, 0, 0, canvasOriginal.width, canvasOriginal.height, xOffset, yOffset, anchoDibujo, altoDibujo);
+
+            // Descargar la imagen
             const enlace = document.createElement('a');
             enlace.download = 'Tarjeta_Edgar_8.9x5.1cm.jpg';
-            enlace.href = canvas.toDataURL('image/jpeg', 0.95);
+            enlace.href = canvasFinal.toDataURL('image/jpeg', 0.95);
             enlace.click();
+
             boton.innerHTML = textoOriginal;
             boton.disabled = false;
         }).catch(error => {
-            console.error('Error al generar la imagen:', error);
-            boton.innerHTML = "❌ Error, recarga la página";
+            console.error(error);
+            boton.innerHTML = "❌ Error, intenta de nuevo";
             boton.disabled = false;
-            alert("No se pudo generar la imagen. Recarga la página e intenta de nuevo.");
+            alert("No se pudo generar la imagen. Recarga la página.");
         });
     });
 </script>
