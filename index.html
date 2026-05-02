@@ -2,6 +2,215 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Edgar Flores | TecnoSite Soluciones</title>
+    <!-- Metaetiquetas para vista previa en WhatsApp -->
+    <meta property="og:title" content="Edgar Flores García | Consultor TI" />
+    <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, soporte remoto y mantenimiento de CCTV. Contáctame." />
+    <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- html2canvas para capturar la tarjeta como imagen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Fuente profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+        }
+        /* Tarjeta de presentación estilo físico (horizontal) */
+        .tarjeta {
+            max-width: 700px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        /* Contenido interno: dos columnas (info + QR) */
+        .contenido-tarjeta {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .info {
+            flex: 2;
+            padding: 28px 20px 28px 28px;
+        }
+        .qr-area {
+            flex: 1;
+            background: #f9fafb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-left: 1px dashed #cbd5e1;
+        }
+        .qr-area img {
+            width: 130px;
+            height: 130px;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .qr-texto {
+            font-size: 10px;
+            color: #475569;
+            margin-top: 12px;
+            text-align: center;
+        }
+        .foto-perfil {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
+        }
+        .nombre {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+        }
+        .titulo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2563eb;
+            background: #dbeafe;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin: 12px 0 8px;
+        }
+        .descripcion {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .boton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .boton-wa { background: #25D366; color: white; }
+        .boton-contacto { background: #1e293b; color: white; }
+        .boton-web { background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; }
+        .boton-imagen { background: #7c3aed; color: white; margin-top: 16px; width: 100%; justify-content: center; }
+        @media (max-width: 550px) {
+            .contenido-tarjeta { flex-direction: column; }
+            .qr-area { border-left: none; border-top: 1px dashed #cbd5e1; flex-direction: row; gap: 20px; justify-content: center; padding: 20px; }
+            .info { padding: 24px; text-align: center; }
+            .foto-perfil { margin-left: auto; margin-right: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="tarjeta" id="tarjetaParaCapturar">
+    <div class="contenido-tarjeta">
+        <!-- Columna izquierda: datos y botones -->
+        <div class="info">
+            <img src="fotoperfil.jpeg" alt="Edgar Flores" class="foto-perfil" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
+            <div class="nombre">Edgar Flores García</div>
+            <div class="titulo">Ingeniero en Tecnologías TI</div>
+            <div class="descripcion">
+                Ciberseguridad · Soporte remoto · CCTV · Migraciones de red
+            </div>
+            <div class="botones">
+                <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20necesito%20soporte%20técnico" target="_blank" class="boton boton-wa">
+                    📲 Contáctame por WhatsApp
+                </a>
+                <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas%0AEND:VCARD" download="Contacto_Edgar_Flores.vcf" class="boton boton-contacto">
+                    💾 Guardar contacto
+                </a>
+                <a href="https://tecnositesoluciones.com" target="_blank" class="boton boton-web">
+                    🌐 Visitar TecnoSite
+                </a>
+            </div>
+        </div>
+        <!-- Columna derecha: QR + texto -->
+        <div class="qr-area">
+            <img id="qrImagen" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/525644326915" alt="Código QR">
+            <div class="qr-texto">
+                Escanea para<br>contactar directo
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Botón para descargar la tarjeta como imagen JPG -->
+<div style="max-width:700px; margin-top: 24px; width:100%;">
+    <button id="btnDescargarTarjeta" class="boton boton-imagen" style="background:#7c3aed;">
+        📸 Descargar tarjeta como imagen (JPG)
+    </button>
+</div>
+
+<script>
+    // Función para asegurar que el QR se carga bien antes de capturar
+    document.getElementById('btnDescargarTarjeta').addEventListener('click', function() {
+        const elemento = document.getElementById('tarjetaParaCapturar');
+        // Mostrar un pequeño mensaje de "generando..."
+        const boton = this;
+        const textoOriginal = boton.innerHTML;
+        boton.innerHTML = "⏳ Generando imagen, espere...";
+        boton.disabled = true;
+
+        // Esperar un momento para que cualquier imagen termine de cargar
+        setTimeout(() => {
+            html2canvas(elemento, {
+                scale: 2.5,          // Alta resolución
+                backgroundColor: '#ffffff',
+                useCORS: true,       // Permite imágenes externas (el QR)
+                logging: false,
+                allowTaint: false
+            }).then(canvas => {
+                // Crear enlace de descarga
+                const enlace = document.createElement('a');
+                enlace.download = 'Tarjeta_TecnoSite_Edgar.jpg';
+                enlace.href = canvas.toDataURL('image/jpeg', 0.95);
+                enlace.click();
+                // Restaurar botón
+                boton.innerHTML = textoOriginal;
+                boton.disabled = false;
+            }).catch(error => {
+                console.error('Error al capturar:', error);
+                boton.innerHTML = "❌ Error, recarga e intenta";
+                boton.disabled = false;
+                alert("Hubo un error. Si el QR no sale, actualiza la página.");
+            });
+        }, 500);
+    });
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Edgar Flores García | Consultor TI" />
     <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, soporte remoto y mantenimiento de CCTV. Contáctame." />
