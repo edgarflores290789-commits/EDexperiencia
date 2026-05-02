@@ -6,6 +6,7 @@
     <title>Edgar Flores García | Consultor TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; color: #0f172a; }
         .vcard-minimal { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #f1f5f9; border-radius: 48px; padding: 44px 28px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); text-align: center; }
@@ -13,12 +14,22 @@
         .photo-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
         .qr-container { display: flex; justify-content: center; margin-bottom: 2rem; background: #f8fafc; padding: 20px; border-radius: 32px; }
         .qr-container img { border: 8px solid white; border-radius: 16px; width: 160px; height: 160px; }
-        /* Nuevo estilo para el botón extra sin afectar los demás */
         .boton-descarga { background: #7c3aed; color: white; margin-top: 16px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 40px; font-weight: bold; border: none; cursor: pointer; font-family: inherit; font-size: 14px; }
-        /* Estilos para la tarjeta oculta (NO se ve en la página) */
+        
+        /* TARJETA OCULTA (NO SE VE EN LA PÁGINA) */
         .tarjeta-oculta {
-            position: fixed; left: -9999px; top: -9999px;
-            width: 680px; background: white; border-radius: 24px; font-family: 'Plus Jakarta Sans', sans-serif; overflow: hidden; display: flex; flex-wrap: wrap; box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            position: fixed;
+            left: -9999px;
+            top: -9999px;
+            width: 680px;
+            background: white;
+            border-radius: 24px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: none;
+            border: 1px solid #e2e8f0;
         }
         .info-oculta { flex: 2; padding: 28px; }
         .qr-oculta { flex: 1; background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-left: 1px dashed #cbd5e1; text-align: center; }
@@ -31,11 +42,10 @@
         .contacto-item { background: #f1f5f9; padding: 4px 10px; border-radius: 30px; font-size: 11px; }
         @media (max-width: 550px) { .tarjeta-oculta { flex-direction: column; width: 90%; } .qr-oculta { border-left: none; border-top: 1px dashed #cbd5e1; flex-direction: row; gap: 16px; } }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
-<!-- TU TARJETA ORIGINAL (sin cambios) -->
+<!-- SOLO ESTA TARJETA ES VISIBLE (LA TUYA) -->
 <div class="vcard-minimal">
     <div class="photo-wrapper">
         <img src="fotoperfil.jpeg" alt="Edgar Flores García" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
@@ -60,7 +70,7 @@
         <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm border border-slate-200">
             <span>💼</span> LinkedIn Profesional
         </a>
-        <!-- Botón nuevo para descargar la tarjeta física -->
+        <!-- BOTÓN PARA DESCARGAR LA IMAGEN DE LA TARJETA HORIZONTAL (OCULTA) -->
         <button id="btnDescargaFisica" class="boton-descarga">
             📸 Descargar tarjeta física (con QR)
         </button>
@@ -72,7 +82,7 @@
     </div>
 </div>
 
-<!-- TARJETA OCULTA (SOLO PARA GENERAR LA IMAGEN, NO SE VE) -->
+<!-- TARJETA OCULTA (SOLO PARA GENERAR LA IMAGEN, NUNCA SE VE EN LA PÁGINA) -->
 <div id="tarjetaOculta" class="tarjeta-oculta">
     <div class="info-oculta">
         <img src="fotoperfil.jpeg" class="foto-oculta" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
@@ -121,100 +131,5 @@
     });
 </script>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Edgar Flores | TecnoSite Soluciones</title>
-    <!-- Metaetiquetas para WhatsApp -->
-    <meta property="og:title" content="Edgar Flores García | Consultor TI" />
-    <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, soporte remoto y CCTV." />
-    <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <style>
-        body { background: #e2e8f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: system-ui, sans-serif; padding: 16px; margin: 0; }
-        .tarjeta { max-width: 420px; width: 100%; background: white; border-radius: 48px; padding: 32px 24px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); text-align: center; }
-        .foto { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: block; }
-        .nombre { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
-        .badge { background: #e0e7ff; color: #1e40af; font-size: 12px; font-weight: bold; display: inline-block; padding: 4px 16px; border-radius: 30px; margin: 16px 0 12px; }
-        .botones { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
-        .boton { display: block; padding: 14px; border-radius: 40px; text-decoration: none; font-weight: 600; text-align: center; transition: 0.2s; }
-        .btn-wa { background: #25D366; color: white; }
-        .btn-contacto { background: #0f172a; color: white; }
-        .btn-web { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
-        .btn-descarga { background: #7c3aed; color: white; margin-top: 8px; border: none; cursor: pointer; font-size: 16px; width: 100%; }
-        /* Tarjeta oculta para la imagen */
-        .tarjeta-oculta {
-            position: fixed; left: -9999px; top: -9999px;
-            width: 680px; background: white; border-radius: 24px; font-family: system-ui; overflow: hidden; display: flex; flex-wrap: wrap;
-        }
-        .info-oculta { flex: 2; padding: 28px; }
-        .qr-oculta { flex: 1; background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-left: 1px dashed #cbd5e1; text-align: center; }
-        .qr-oculta img { width: 120px; height: 120px; border-radius: 16px; }
-        .qr-texto { font-size: 11px; color: #334155; margin-top: 8px; }
-        .foto-oculta { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
-        .nombre-oculta { font-size: 20px; font-weight: 800; }
-        .contactos { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-        .contacto-item { background: #f1f5f9; padding: 4px 10px; border-radius: 30px; font-size: 11px; }
-        @media (max-width: 550px) { .tarjeta-oculta { flex-direction: column; width: 90%; } .qr-oculta { border-left: none; border-top: 1px dashed #cbd5e1; flex-direction: row; gap: 12px; } }
-    </style>
-</head>
-<body>
-
-<div class="tarjeta">
-    <img src="fotoperfil.jpeg" alt="Edgar" class="foto" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
-    <div class="nombre">Edgar Flores García</div>
-    <div class="badge">Ingeniero en Tecnologías TI</div>
-    <div class="botones">
-        <a href="https://wa.me/525644326915?text=Hola%20Edgar" class="boton btn-wa" target="_blank">📲 Contactar por WhatsApp</a>
-        <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Flores García;Edgar;;;%0AFN:Edgar Flores García%0AORG:TecnoSite Soluciones%0ATEL;TYPE=CELL:5644326915%0AEMAIL:edgar.flores290789@gmail.com%0AURL:https://www.productos-info.com%0AEND:VCARD" download="Contacto_Edgar_Flores.vcf" class="boton btn-contacto">💾 Guardar contacto (VCF)</a>
-        <a href="https://tecnositesoluciones.com" class="boton btn-web" target="_blank">🌐 TecnoSite Soluciones</a>
-        <button id="btnGenerarImagen" class="boton btn-descarga">📸 Descargar tarjeta física (con QR)</button>
-    </div>
-</div>
-
-<!-- TARJETA OCULTA PARA LA IMAGEN -->
-<div id="tarjetaOculta" class="tarjeta-oculta">
-    <div class="info-oculta">
-        <img src="fotoperfil.jpeg" class="foto-oculta" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=2563eb&color=fff'">
-        <div class="nombre-oculta">Edgar Flores García</div>
-        <div class="badge" style="font-size:11px; margin:8px 0;">Ingeniero en Tecnologías TI</div>
-        <div>Ciberseguridad · Soporte remoto · CCTV</div>
-        <div class="contactos">
-            <span class="contacto-item">📞 56 44 32 69 15</span>
-            <span class="contacto-item">✉️ edgar.flores290789@gmail.com</span>
-        </div>
-    </div>
-    <div class="qr-oculta">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://wa.me/525644326915" alt="QR WhatsApp">
-        <div class="qr-texto">Escanea para contactar<br>por WhatsApp</div>
-    </div>
-</div>
-
-<script>
-    document.getElementById('btnGenerarImagen').addEventListener('click', function() {
-        const boton = this;
-        const textoOriginal = boton.innerHTML;
-        boton.innerHTML = "⏳ Generando...";
-        boton.disabled = true;
-        const elemento = document.getElementById('tarjetaOculta');
-        setTimeout(() => {
-            html2canvas(elemento, { scale: 2.5, backgroundColor: '#ffffff', useCORS: true })
-                .then(canvas => {
-                    const enlace = document.createElement('a');
-                    enlace.download = 'Tarjeta_TecnoSite_Edgar.jpg';
-                    enlace.href = canvas.toDataURL('image/jpeg', 0.95);
-                    enlace.click();
-                })
-                .catch(error => console.error(error))
-                .finally(() => {
-                    boton.innerHTML = textoOriginal;
-                    boton.disabled = false;
-                });
-        }, 500);
-    });
-</script>
 </body>
 </html>
