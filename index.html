@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edgar Flores García | Consultor TI</title>
-    <!-- Metaetiquetas para vista previa en redes sociales -->
+    <!-- Metaetiquetas para vista previa en WhatsApp y redes -->
     <meta property="og:title" content="Edgar Flores García | Consultor TI" />
     <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, soporte remoto y mantenimiento de CCTV. Contáctame." />
     <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
+    <meta property="og:url" content="https://edgarflores290789-commits.github.io/EDexperiencia/" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -37,19 +38,28 @@
         </div>
 
         <div class="space-y-3">
+            <!-- Botón de WhatsApp (reemplaza al de Guardar Contacto) -->
             <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20vi%20tu%20tarjeta%20y%20necesito%20soporte%20técnico" target="_blank" 
                class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-slate-900 text-white hover:bg-slate-800 transition">
                 <span>📲</span> Contactar por WhatsApp
             </a>
 
+            <!-- Ver Currículum -->
             <a href="Curriculum.html" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-blue-600 text-white">
                 <span>📄</span> Ver Currículum Completo
             </a>
 
+            <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm border border-slate-200">
                 <span>💼</span> LinkedIn Profesional
             </a>
 
+            <!-- Botón Compartir (nuevo) -->
+            <button id="btnCompartir" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 transition cursor-pointer">
+                🔗 Compartir tarjeta digital
+            </button>
+
+            <!-- Botón Descargar tarjeta (8.9x5.1 cm) -->
             <button id="btnDescargarTarjeta" class="flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold text-sm bg-green-600 text-white hover:bg-green-700 transition cursor-pointer">
                 🖨️ Descargar tarjeta (8.9x5.1 cm)
             </button>
@@ -63,6 +73,25 @@
     </div>
 
     <script>
+        // Botón Compartir
+        document.getElementById('btnCompartir').addEventListener('click', function() {
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Edgar Flores García - Consultor TI',
+                    text: 'Tarjeta profesional de Edgar Flores, especialista en ciberseguridad y soporte técnico.',
+                    url: url
+                }).catch(err => console.log('Compartir cancelado:', err));
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Enlace copiado al portapapeles. Compártelo donde quieras.');
+                }).catch(() => {
+                    alert('No se pudo copiar el enlace. Comparte manualmente: ' + url);
+                });
+            }
+        });
+
+        // Botón Descargar tarjeta en tamaño 8.9x5.1 cm (con clonación para mantener centrado)
         document.getElementById('btnDescargarTarjeta').addEventListener('click', async function() {
             const boton = this;
             const textoOriginal = boton.innerHTML;
