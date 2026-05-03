@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edgar Flores García | Consultor TI</title>
-    <!-- Metaetiquetas para vista previa -->
     <meta property="og:title" content="Edgar Flores García | Consultor TI" />
     <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, Soporte Remoto, Video Vigilancia y Cableado Estructurado." />
     <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
@@ -19,8 +18,6 @@
         .photo-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
         .qr-container { display: flex; justify-content: center; margin-bottom: 2rem; background: #f8fafc; padding: 20px; border-radius: 32px; }
         .qr-container img { border: 8px solid white; border-radius: 16px; width: 160px; height: 160px; }
-
-        /* Estilo único para todos los botones visibles en la página */
         .btn-profesional {
             display: flex;
             align-items: center;
@@ -52,39 +49,24 @@
     </style>
 </head>
 <body>
-    <!-- Tarjeta original visible (con todos los botones interactivos) -->
     <div id="tarjetaOriginal" class="vcard-minimal">
         <div class="photo-wrapper">
              <img src="fotoperfil.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=0f3b5f&color=fff'">
         </div>
-
         <div class="mb-6">
             <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Ingeniero TI</span>
             <h1 class="text-3xl font-extrabold text-slate-900 mt-3 mb-1">Edgar Flores García</h1>
             <p class="text-slate-500 text-sm font-medium">Ciberseguridad, Soporte Remoto, Video Vigilancia y Cableado Estructurado</p>
         </div>
-
         <div class="qr-container">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://edgarflores290789-commits.github.io/EDexperiencia/" alt="QR">
         </div>
-
-        <!-- Botones interactivos (no aparecerán en la imagen descargada) -->
         <div class="space-y-3">
-            <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20vi%20tu%20tarjeta%20y%20necesito%20soporte%20técnico" target="_blank" class="btn-profesional">
-                📲 WhatsApp
-            </a>
-            <a href="Curriculum.html" class="btn-profesional">
-                📄 Currículum
-            </a>
-            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="btn-profesional">
-                💼 LinkedIn
-            </a>
-            <button id="btnCompartir" class="btn-profesional">
-                🔗 Compartir tarjeta
-            </button>
+            <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20vi%20tu%20tarjeta%20y%20necesito%20soporte%20técnico" target="_blank" class="btn-profesional">📲 WhatsApp</a>
+            <a href="Curriculum.html" class="btn-profesional">📄 Currículum</a>
+            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="btn-profesional">💼 LinkedIn</a>
+            <button id="btnCompartir" class="btn-profesional">🔗 Compartir tarjeta</button>
         </div>
-
-        <!-- Enlaces pequeños de la parte inferior (si quieres que también desaparezcan en la imagen, se pueden eliminar en el clon) -->
         <div class="grid grid-cols-1 gap-2 mt-6">
             <a href="https://tecnositesoluciones.com" class="text-[10px] font-bold text-blue-700 uppercase hover:text-blue-900 transition">🌐 Servicios TI</a>
             <a href="https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas" class="text-[10px] font-bold text-blue-700 uppercase hover:text-blue-900 transition">✨ Tienda VideoVigilancia</a>
@@ -92,7 +74,6 @@
         </div>
     </div>
 
-    <!-- Botón único de descarga para imagen tipo tarjeta (vertical, sin botones) -->
     <div class="contenedor-boton">
         <button id="btnDescargarTarjeta" class="btn-profesional" style="background: #0f3b5f;">
             📸 Descargar imagen como tarjeta (vertical)
@@ -100,10 +81,9 @@
     </div>
 
     <script>
-        // Función que captura un clon sin los botones de acción (y opcionalmente sin los enlaces inferiores)
         async function generarImagenTarjetaVertical() {
             const elementoOriginal = document.getElementById('tarjetaOriginal');
-            const anchoFijo = 420; // ancho original de la tarjeta
+            const anchoFijo = 420;
             const clon = elementoOriginal.cloneNode(true);
             clon.style.width = `${anchoFijo}px`;
             clon.style.maxWidth = `${anchoFijo}px`;
@@ -112,31 +92,36 @@
             clon.style.top = '-9999px';
             clon.style.backgroundColor = '#ffffff';
 
-            // Eliminar la sección de botones grandes (WhatsApp, Currículum, LinkedIn, Compartir)
+            // Eliminar botones grandes
             const botonesDiv = clon.querySelector('.space-y-3');
             if (botonesDiv) botonesDiv.remove();
 
-            // Opcional: si también quieres eliminar los enlaces de la parte inferior (Servicios TI, Tiendas)
-            // Descomenta la siguiente línea si no quieres que aparezcan en la imagen.
-            // const enlacesFooter = clon.querySelector('.grid');
-            // if (enlacesFooter) enlacesFooter.remove();
+            // --- Reemplazar textos de los enlaces inferiores por las URLs reales ---
+            const enlaces = clon.querySelectorAll('.grid a');
+            if (enlaces.length >= 3) {
+                // Primer enlace: Servicios TI -> tecnositesoluciones.com (o la URL completa)
+                enlaces[0].innerHTML = '🌐 tecnositesoluciones.com';
+                // Segundo enlace: Tienda VideoVigilancia
+                enlaces[1].innerHTML = '✨ productos-info.com/tienda/tecnosite-soluciones-especializadas';
+                // Tercer enlace: Tienda Online
+                enlaces[2].innerHTML = '🛒 tienda.tecnositesoluciones.com';
+            }
+            // Ajustar tamaño de fuente para que quepa (opcional)
+            enlaces.forEach(enlace => {
+                enlace.style.fontSize = '9px';
+                enlace.style.wordBreak = 'break-all';
+            });
 
             document.body.appendChild(clon);
 
             try {
-                // Capturar el clon manteniendo su tamaño original (scale=1 porque ya tiene ancho fijo)
                 const canvasClon = await html2canvas(clon, {
-                    scale: 2, // Mejor resolución, pero el tamaño final será 2x el ancho fijo? No, scale aumenta la resolución interna.
-                    // Para que el tamaño en píxeles sea exactamente el que vemos, usamos scale = devicePixelRatio o 2 para alta calidad.
-                    // El ancho del canvas resultante será approx anchoFijo * scale. Luego lo recortaremos a su tamaño natural si queremos.
+                    scale: 2,
                     backgroundColor: '#ffffff',
                     useCORS: true,
                     logging: false
                 });
                 document.body.removeChild(clon);
-
-                // Ya que el canvas tiene dimensiones mayores (por el scale), las guardamos como están para obtener alta resolución.
-                // No redimensionamos, simplemente descargamos el canvas tal cual. Así la imagen será vertical con buena resolución.
                 const enlace = document.createElement('a');
                 enlace.download = 'Tarjeta_Edgar_vertical.jpg';
                 enlace.href = canvasClon.toDataURL('image/jpeg', 0.95);
@@ -147,7 +132,6 @@
             }
         }
 
-        // Botón de descarga
         document.getElementById('btnDescargarTarjeta').addEventListener('click', async function() {
             const boton = this;
             const textoOriginal = boton.innerHTML;
@@ -158,7 +142,6 @@
             boton.disabled = false;
         });
 
-        // Botón Compartir (sigue igual)
         document.getElementById('btnCompartir').addEventListener('click', function() {
             const url = window.location.href;
             if (navigator.share) {
