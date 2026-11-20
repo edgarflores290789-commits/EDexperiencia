@@ -1,163 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Flores García | Consultor TI</title>
-    <meta property="og:title" content="Edgar Flores García | Consultor TI" />
-    <meta property="og:description" content="Ingeniero en TI – Ciberseguridad, Soporte Remoto, Video Vigilancia y Cableado Estructurado." />
-    <meta property="og:image" content="https://edgarflores290789-commits.github.io/EDexperiencia/fotoperfil.jpeg" />
-    <meta property="og:url" content="https://edgarflores290789-commits.github.io/EDexperiencia/" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; color: #0f172a; flex-direction: column; }
-        .vcard-minimal { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #f1f5f9; border-radius: 48px; padding: 44px 28px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); text-align: center; margin-bottom: 20px; }
-        .photo-wrapper { width: 150px; height: 150px; margin: 0 auto 32px; border-radius: 50%; padding: 5px; background: #f1f5f9; border: 1px solid #e2e8f0; overflow: hidden; }
-        .photo-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-        .qr-container { display: flex; justify-content: center; margin-bottom: 2rem; background: #f8fafc; padding: 20px; border-radius: 32px; }
-        .qr-container img { border: 8px solid white; border-radius: 16px; width: 160px; height: 160px; }
-        .btn-profesional {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 14px 20px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            background: #0f3b5f;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin-bottom: 12px;
-        }
-        .btn-profesional:hover {
-            background: #0a2a44;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .contenedor-boton {
-            max-width: 420px;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edgar Flores García · Tarjeta digital</title>
+<meta name="description" content="Ingeniero en TI. Gestión de celulares (MDM), ciberseguridad, redes y cableado, cámaras, soporte técnico y Google Workspace para empresas.">
+<meta property="og:title" content="Edgar Flores García · Ingeniero TI">
+<meta property="og:description" content="Gestión de celulares, ciberseguridad, redes, cámaras y soporte TI para empresas.">
+<meta property="og:url" content="https://ing.edgarfg.mipresenciadigital.net/">
+<meta property="og:image" content="https://ing.edgarfg.mipresenciadigital.net/fotoperfil.jpeg">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#12263A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#EDF1F4; --blanco:#FFFFFF; --tinta:#12263A; --pizarra:#55677A;
+    --linea:#D5DDE4; --enrolado:#0F8A6C; --enrolado-oscuro:#0B6B54;
+    --pendiente:#D9A441; --menta:#7FD3BC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Archivo',system-ui,sans-serif;font-variation-settings:"wdth" 100;
+    background:var(--papel);color:var(--tinta);line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;justify-content:center;align-items:flex-start;
+    padding:1rem .75rem 1.5rem;
+  }
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--enrolado);outline-offset:3px;border-radius:8px}
+
+  .tarjeta{
+    width:100%;max-width:420px;background:var(--blanco);
+    border-radius:24px;overflow:hidden;border:1px solid var(--linea);
+    box-shadow:0 18px 40px -18px rgba(18,38,58,.35);
+  }
+
+  /* Cabecera con la flota */
+  .cabecera{position:relative;background:var(--tinta);height:92px;overflow:hidden}
+  .flota{
+    position:absolute;inset:12px 12px auto 12px;
+    display:grid;grid-template-columns:repeat(26,1fr);gap:4px;
+  }
+  .flota i{display:block;aspect-ratio:1;border-radius:2px;background:#24394F;transition:background-color .4s ease}
+  .flota i.pend{background:var(--pendiente)}
+  .flota i.ok{background:var(--enrolado)}
+  .foto{
+    position:relative;z-index:1;display:block;
+    width:104px;height:104px;margin:-56px auto 0;border-radius:50%;
+    border:4px solid var(--blanco);object-fit:cover;object-position:50% 22%;
+    background:var(--papel);
+  }
+
+  .identidad{text-align:center;padding:.6rem 1.25rem .9rem}
+  .identidad h1{
+    font-size:1.6rem;line-height:1.1;font-weight:800;
+    font-variation-settings:"wdth" 116;letter-spacing:-.015em;
+  }
+  .identidad .puesto{margin-top:.25rem;line-height:1.3;font-weight:600;color:var(--enrolado-oscuro)}
+  .areas{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;margin-top:.7rem}
+  .areas li{font-size:.78rem;font-weight:500;padding:.28rem .6rem;border-radius:999px;border:1px solid var(--linea);color:var(--pizarra);white-space:nowrap}
+  .areas li.fuerte{background:var(--enrolado);border-color:var(--enrolado);color:#fff;font-weight:600}
+
+  .dato{
+    margin:0 1.25rem;padding:.6rem .9rem;border-radius:12px;background:var(--papel);
+    display:flex;align-items:center;gap:.9rem;
+  }
+  .dato b{
+    font-size:1.35rem;font-weight:800;font-variation-settings:"wdth" 118;line-height:1;
+    color:var(--enrolado);font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  .dato span{font-size:.85rem;color:var(--pizarra);line-height:1.35}
+
+  .acciones{padding:.9rem 1.25rem 0;display:grid;gap:.5rem}
+  .boton{
+    display:flex;align-items:center;justify-content:center;gap:.6rem;
+    padding:.75rem .9rem;border-radius:12px;font-weight:600;font-size:.95rem;
+    border:2px solid var(--linea);background:var(--blanco);color:var(--tinta);
+    font-family:inherit;cursor:pointer;width:100%;
+  }
+  .boton:hover{border-color:var(--tinta)}
+  .boton svg{width:20px;height:20px;flex:none}
+  .boton.principal{background:var(--enrolado);border-color:var(--enrolado);color:#fff;font-size:1.05rem}
+  .boton.principal:hover{background:var(--enrolado-oscuro);border-color:var(--enrolado-oscuro)}
+  .fila{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+  .doble{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+  .doble .boton{white-space:nowrap;gap:.4rem;font-size:.88rem;padding-left:.5rem;padding-right:.5rem}
+  .fila .boton{flex-direction:column;gap:.25rem;padding:.65rem .3rem;font-size:.8rem}
+  .fila .boton svg{width:22px;height:22px}
+
+
+
+  .mostrar-qr{display:block;margin:.6rem auto 0;background:none;border:0;font-family:inherit;font-size:.88rem;font-weight:600;color:var(--enrolado-oscuro);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  .qr{margin:.75rem 1.25rem 0;padding:1rem;border-radius:12px;background:var(--papel);display:flex;align-items:center;gap:1rem}
+  .qr[hidden]{display:none}
+  .qr .qr-img{width:120px;height:120px;background:#fff;padding:6px;flex:none;border-radius:8px}
+  .qr p{font-size:.9rem;color:var(--pizarra)}
+  .aviso{min-height:1.2em;text-align:center;font-size:.85rem;color:var(--enrolado-oscuro);padding:.4rem 1.25rem 0}
+  .pie{padding:.6rem 1.25rem 1rem;text-align:center;font-size:.82rem;color:var(--pizarra)}
+
+  @media (max-width:380px){
+    .identidad h1{font-size:1.5rem}
+    .acciones{padding-left:1rem;padding-right:1rem}
+    .dato,.qr{margin-left:1rem;margin-right:1rem}
+  }
+</style>
 </head>
 <body>
-    <div id="tarjetaOriginal" class="vcard-minimal">
-        <div class="photo-wrapper">
-             <img src="fotoperfil.jpeg" alt="Edgar Flores García" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Edgar+Flores&background=0f3b5f&color=fff'">
-        </div>
-        <div class="mb-6">
-            <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Ingeniero TI</span>
-            <h1 class="text-3xl font-extrabold text-slate-900 mt-3 mb-1">Edgar Flores García</h1>
-            <p class="text-slate-500 text-sm font-medium">Ciberseguridad, Soporte Remoto, Video Vigilancia y Cableado Estructurado</p>
-        </div>
-        <div class="qr-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://edgarflores290789-commits.github.io/EDexperiencia/" alt="QR">
-        </div>
-        <div class="space-y-3">
-            <a href="https://wa.me/525644326915?text=Hola%20Edgar,%20vi%20tu%20tarjeta%20y%20necesito%20soporte%20técnico" target="_blank" class="btn-profesional">📲 WhatsApp</a>
-            <a href="Curriculum.html" class="btn-profesional">📄 Currículum</a>
-            <a href="https://www.linkedin.com/in/edgarfloresti" target="_blank" class="btn-profesional">💼 LinkedIn</a>
-            <button id="btnCompartir" class="btn-profesional">🔗 Compartir tarjeta</button>
-        </div>
-        <div class="grid grid-cols-1 gap-2 mt-6">
-            <a href="https://tecnositesoluciones.com" class="text-[10px] font-bold text-blue-700 uppercase hover:text-blue-900 transition">🌐 Servicios TI</a>
-            <a href="https://www.productos-info.com/tienda/tecnosite-soluciones-especializadas" class="text-[10px] font-bold text-blue-700 uppercase hover:text-blue-900 transition">✨ Tienda VideoVigilancia</a>
-            <a href="https://tienda.tecnositesoluciones.com" class="text-[10px] font-bold text-blue-700 uppercase hover:text-blue-900 transition">🛒 Tienda Online</a>
-        </div>
+
+<main class="tarjeta">
+  <div class="cabecera" aria-hidden="true"><div class="flota" id="flota"></div></div>
+  <img class="foto" src="fotoperfil.jpeg" alt="Foto de Edgar Flores García">
+
+  <div class="identidad">
+    <h1>Edgar Flores García</h1>
+    <p class="puesto">Ingeniero TI<br>Dispositivos, seguridad y redes</p>
+    <ul class="areas" aria-label="Áreas de trabajo">
+      <li class="fuerte">Gestión de celulares (MDM)</li>
+      <li class="fuerte">Ciberseguridad</li>
+      <li>Redes y cableado</li>
+      <li>Cámaras y control de acceso</li>
+      <li>Soporte técnico</li>
+      <li>Google Workspace y Microsoft 365</li>
+    </ul>
+  </div>
+
+  <div class="dato">
+    <b>32,000</b>
+    <span>usuarios con celulares y tabletas administrados en banca</span>
+  </div>
+
+  <div class="acciones">
+    <a class="boton principal" href="https://wa.me/525644326915?text=Hola%20Edgar%2C%20vi%20tu%20tarjeta%20y%20me%20interesa%20tu%20apoyo%20con" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+      Escríbeme por WhatsApp
+    </a>
+    <div class="fila">
+      <a class="boton" href="tel:+525644326915">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Llamar
+      </a>
+      <a class="boton" href="mailto:edgar.flores290789@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Correo
+      </a>
+      <a class="boton" href="https://www.linkedin.com/in/edgarfloresti" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>
+        LinkedIn
+      </a>
+      <a class="boton" href="Curriculum.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+        Mi CV
+      </a>
     </div>
-
-    <div class="contenedor-boton">
-        <button id="btnDescargarTarjeta" class="btn-profesional" style="background: #0f3b5f;">
-            📸 Descargar como tarjeta
-        </button>
+    <div class="doble">
+    <button class="boton" type="button" id="guardar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      Guardar contacto
+    </button>
+      <button class="boton" type="button" id="compartir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        Compartir
+      </button>
     </div>
+  </div>
+  <p class="aviso" id="aviso" role="status"></p>
 
-    <script>
-        async function generarImagenTarjetaVertical() {
-            const elementoOriginal = document.getElementById('tarjetaOriginal');
-            const anchoFijo = 420;
-            const clon = elementoOriginal.cloneNode(true);
-            clon.style.width = `${anchoFijo}px`;
-            clon.style.maxWidth = `${anchoFijo}px`;
-            clon.style.position = 'absolute';
-            clon.style.left = '-9999px';
-            clon.style.top = '-9999px';
-            clon.style.backgroundColor = '#ffffff';
+  <button class="mostrar-qr" type="button" id="mostrar-qr" aria-expanded="false" aria-controls="qr">Mostrar código QR</button>
+  <div class="qr" id="qr" hidden>
+    <svg class="qr-img" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 37 37" shape-rendering="crispEdges" role="img" aria-label="Código QR de esta tarjeta"><rect x="-2" y="-2" width="37" height="37" fill="#fff"/><path fill="#12263A" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM11 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM15 3h1v1h-1zM18 3h1v1h-1zM19 3h1v1h-1zM21 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM21 5h1v1h-1zM22 5h1v1h-1zM23 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM16 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM21 7h1v1h-1zM23 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM19 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM4 9h1v1h-1zM9 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM0 10h1v1h-1zM2 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM17 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM23 11h1v1h-1zM26 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM30 11h1v1h-1zM31 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM32 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM7 13h1v1h-1zM12 13h1v1h-1zM15 13h1v1h-1zM18 13h1v1h-1zM21 13h1v1h-1zM24 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM30 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM29 14h1v1h-1zM31 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM4 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM18 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM10 16h1v1h-1zM12 16h1v1h-1zM15 16h1v1h-1zM17 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM32 16h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM26 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM1 18h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM18 20h1v1h-1zM21 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM31 20h1v1h-1zM0 21h1v1h-1zM1 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM24 22h1v1h-1zM26 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM0 23h1v1h-1zM3 23h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM10 25h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM11 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM9 29h1v1h-1zM10 29h1v1h-1zM11 29h1v1h-1zM12 29h1v1h-1zM15 29h1v1h-1zM18 29h1v1h-1zM21 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM11 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM30 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM12 31h1v1h-1zM14 31h1v1h-1zM15 31h1v1h-1zM21 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM30 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM22 32h1v1h-1zM23 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM31 32h1v1h-1z"/></svg>
+    <p>Escanea este código para abrir mi tarjeta en otro teléfono.</p>
+  </div>
 
-            // Eliminar botones grandes
-            const botonesDiv = clon.querySelector('.space-y-3');
-            if (botonesDiv) botonesDiv.remove();
+  <p class="pie">Edomex, CDMX y remoto</p>
+</main>
 
-            // --- Reemplazar textos de los enlaces inferiores por las URLs reales ---
-            const enlaces = clon.querySelectorAll('.grid a');
-            if (enlaces.length >= 3) {
-                // Primer enlace: Servicios TI -> tecnositesoluciones.com (o la URL completa)
-                enlaces[0].innerHTML = '🌐 tecnositesoluciones.com';
-                // Segundo enlace: Tienda VideoVigilancia
-                enlaces[1].innerHTML = '✨ productos-info.com/tienda/tecnosite-soluciones-especializadas';
-                // Tercer enlace: Tienda Online
-                enlaces[2].innerHTML = '🛒 tienda.tecnositesoluciones.com';
-            }
-            // Ajustar tamaño de fuente para que quepa (opcional)
-            enlaces.forEach(enlace => {
-                enlace.style.fontSize = '9px';
-                enlace.style.wordBreak = 'break-all';
-            });
+<script>
+(function(){
+  // ---- Flota que se enrola en la cabecera ----
+  var cols = 26, filas = 3, total = cols * filas, lote = 10;
+  var flota = document.getElementById('flota'), celdas = [];
+  for (var i = 0; i < total; i++) { var c = document.createElement('i'); flota.appendChild(c); celdas.push(c); }
+  var orden = celdas.map(function(_, i){ return i; });
+  for (var j = orden.length - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)); var t = orden[j]; orden[j] = orden[k]; orden[k] = t; }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    celdas.forEach(function(c){ c.className = 'ok'; }); return;
+  }
+  var hechos = 0;
+  function siguiente(){
+    var grupo = orden.slice(hechos, hechos + lote);
+    grupo.forEach(function(n){ celdas[n].className = 'pend'; });
+    setTimeout(function(){
+      grupo.forEach(function(n){ celdas[n].className = 'ok'; });
+      hechos += grupo.length;
+      if (hechos < total) setTimeout(siguiente, 110);
+    }, 320);
+  }
+  setTimeout(siguiente, 500);
+})();
 
-            document.body.appendChild(clon);
+(function(){
+  var aviso = document.getElementById('aviso');
+  var url = 'https://ing.edgarfg.mipresenciadigital.net/';
 
-            try {
-                const canvasClon = await html2canvas(clon, {
-                    scale: 2,
-                    backgroundColor: '#ffffff',
-                    useCORS: true,
-                    logging: false
-                });
-                document.body.removeChild(clon);
-                const enlace = document.createElement('a');
-                enlace.download = 'Tarjeta_Edgar_vertical.jpg';
-                enlace.href = canvasClon.toDataURL('image/jpeg', 0.95);
-                enlace.click();
-            } catch (error) {
-                console.error(error);
-                alert("Error al generar la imagen. Recarga la página.");
-            }
-        }
+  var btnQr = document.getElementById('mostrar-qr'), qr = document.getElementById('qr');
+  btnQr.addEventListener('click', function(){
+    var abrir = qr.hidden; qr.hidden = !abrir;
+    btnQr.setAttribute('aria-expanded', abrir);
+    btnQr.textContent = abrir ? 'Ocultar código QR' : 'Mostrar código QR';
+  });
 
-        document.getElementById('btnDescargarTarjeta').addEventListener('click', async function() {
-            const boton = this;
-            const textoOriginal = boton.innerHTML;
-            boton.innerHTML = "⏳ Generando imagen...";
-            boton.disabled = true;
-            await generarImagenTarjetaVertical();
-            boton.innerHTML = textoOriginal;
-            boton.disabled = false;
-        });
+  document.getElementById('guardar').addEventListener('click', function(){
+    var vcf = [
+      'BEGIN:VCARD','VERSION:3.0',
+      'N:Flores García;Edgar;;;','FN:Edgar Flores García',
+      'TITLE:Ingeniero TI - Dispositivos, ciberseguridad e infraestructura',
+      'TEL;TYPE=CELL:+525644326915',
+      'EMAIL:edgar.flores290789@gmail.com',
+      'URL:' + url,
+      'END:VCARD'
+    ].join('\r\n');
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([vcf], {type:'text/vcard;charset=utf-8'}));
+    a.download = 'Edgar-Flores-Garcia.vcf';
+    document.body.appendChild(a); a.click(); a.remove();
+    aviso.textContent = 'Contacto descargado. Ábrelo para guardarlo en tu teléfono.';
+  });
 
-        document.getElementById('btnCompartir').addEventListener('click', function() {
-            const url = window.location.href;
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Edgar Flores García - Consultor TI',
-                    text: 'Tarjeta profesional de Edgar Flores, especialista en ciberseguridad y soporte técnico.',
-                    url: url
-                }).catch(err => console.log('Compartir cancelado:', err));
-            } else {
-                navigator.clipboard.writeText(url).then(() => {
-                    alert('Enlace copiado al portapapeles. Compártelo donde quieras.');
-                }).catch(() => {
-                    alert('No se pudo copiar el enlace. Comparte manualmente: ' + url);
-                });
-            }
-        });
-    </script>
+  document.getElementById('compartir').addEventListener('click', function(){
+    var datos = {title:'Edgar Flores García', text:'Dispositivos, ciberseguridad e infraestructura TI para empresas', url:url};
+    if (navigator.share) { navigator.share(datos).catch(function(){}); return; }
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function(){
+        aviso.textContent = 'Enlace copiado. Pégalo donde quieras compartirlo.';
+      }, function(){ aviso.textContent = 'Copia esta dirección: ' + url; });
+    } else { aviso.textContent = 'Copia esta dirección: ' + url; }
+  });
+})();
+</script>
 </body>
 </html>
